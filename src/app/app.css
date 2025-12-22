@@ -1,0 +1,53 @@
+/* ================= Common Toast Styling ================= */
+:host ::ng-deep .p-toast .p-toast-message {
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 1.25rem !important; /* حواف ناعمة جداً تماشياً مع كروت المنتجات */
+}
+
+/* ================= Success Toast (Ventro Green/Indigo) ================= */
+:host ::ng-deep .p-toast .p-toast-message-success {
+  /* تدرج من كحلي الموقع إلى أخضر الزمرد الهادئ */
+  background: linear-gradient(135deg, #010B22 0%, #064e3b 100%) !important;
+  color: #ffffff !important;
+}
+
+:host ::ng-deep .p-toast .p-toast-message-success .p-toast-icon-close {
+  color: #ffffff !important;
+}
+
+/* ================= Warn / Remove Toast (Ventro Rose/Dark) ================= */
+:host ::ng-deep .p-toast .p-toast-message-warn {
+  /* تدرج من كحلي الموقع إلى الأحمر الياقوتي الغامق */
+  background: linear-gradient(135deg, #010B22 0%, #991b1b 100%) !important;
+  color: #ffffff !important;
+}
+
+/* ================= Text Styles ================= */
+:host ::ng-deep .p-toast .p-toast-message .p-toast-summary {
+  font-family: 'Inter', sans-serif; /* أو الخط المستخدم في موقعك */
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.025em !important;
+  text-transform: uppercase;
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-detail {
+  font-weight: 400 !important;
+  font-size: 0.85rem !important;
+  opacity: 0.9;
+}
+
+/* تعديل أيقونة الإغلاق */
+:host ::ng-deep .p-toast .p-toast-icon-close {
+  width: 2rem !important;
+  height: 2rem !important;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .p-toast .p-toast-icon-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

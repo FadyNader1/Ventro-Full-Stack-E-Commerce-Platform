@@ -1,0 +1,30 @@
+<div 
+  *ngIf="loading"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm"
+>
+  <div class="relative w-20 h-20">
+    <!-- الدائرة الخارجية الثابتة -->
+    <div class="absolute inset-0 rounded-full border-8 border-white/20"></div>
+    
+    <!-- الدائرة الدوارة بالجراديانت الرسمي بتاع Ventro -->
+    <div
+      class="absolute inset-0 rounded-full border-4 border-transparent 
+             bg-gradient-to-r from-[var(--ventro-primary)] via-[var(--ventro-accent)] to-[var(--ventro-primary)]
+             bg-clip-border animate-spin"
+      style="animation-duration: 1s;"
+    ></div>
+
+    <!-- الدائرة الداخلية اللي بتدور بشكل أقوى -->
+    <div
+      class="absolute inset-2 rounded-full border-4 border-transparent 
+             bg-gradient-to-r from-transparent via-white to-transparent
+             animate-spin"
+      style="animation-duration: 0.6s; animation-direction: reverse;"
+    ></div>
+
+    <!-- شعار V صغير في النص (اختياري – لو عايز تحسس العميل إنه في مكان فاخر) -->
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="text-2xl font-black text-white drop-shadow-2xl">V</span>
+    </div>
+  </div>
+</div>

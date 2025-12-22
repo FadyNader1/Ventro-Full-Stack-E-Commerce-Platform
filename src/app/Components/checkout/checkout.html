@@ -1,0 +1,581 @@
+<div
+  class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-10 px-4 sm:px-6 lg:px-8"
+>
+  <div class="max-w-4xl mx-auto">
+    <!-- Progress Bar (أنيق وناعم) -->
+    <div class="flex items-center justify-between mb-12">
+      <!-- Step 1 -->
+      <div class="flex items-center">
+        <div class="relative">
+          <div
+            class="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg ring-4 ring-white transition-all duration-300"
+          >
+            1
+          </div>
+          <div
+            class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"
+          ></div>
+        </div>
+        <div class="ml-4">
+          <div class="font-semibold text-slate-800">Shipping</div>
+          <div class="text-sm text-slate-600">Address details</div>
+        </div>
+      </div>
+
+      <!-- Line -->
+      <div
+        class="flex-1 h-1 mx-6 bg-gradient-to-r from-gray-200 to-gray-300 rounded-full overflow-hidden"
+      >
+        <div
+          class="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-700 ease-out rounded-full"
+          [style.width.%]="activeStep >= 1 ? 100 : 0"
+        ></div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex items-center">
+        <div
+          class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-md transition-all duration-300"
+          [class.bg-gradient-to-br]="activeStep >= 1"
+          [class.from-blue-600]="activeStep >= 1"
+          [class.to-indigo-600]="activeStep >= 1"
+          [class.text-white]="activeStep >= 1"
+          [class.bg-gray-100]="activeStep < 1"
+          [class.text-slate-400]="activeStep < 1"
+          [class.ring-4]="activeStep >= 1"
+          [class.ring-white]="activeStep >= 1"
+        >
+          2
+        </div>
+        <div class="ml-4">
+          <div
+            class="font-semibold"
+            [class.text-slate-800]="activeStep >= 1"
+            [class.text-slate-400]="activeStep < 1"
+          >
+            Delivery
+          </div>
+          <div
+            class="text-sm"
+            [class.text-slate-600]="activeStep >= 1"
+            [class.text-slate-400]="activeStep < 1"
+          >
+            Choose speed
+          </div>
+        </div>
+      </div>
+
+      <!-- Line -->
+      <div
+        class="flex-1 h-1 mx-6 bg-gradient-to-r from-gray-200 to-gray-300 rounded-full overflow-hidden"
+      >
+        <div
+          class="h-full bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-700 ease-out rounded-full"
+          [style.width.%]="activeStep >= 2 ? 100 : 0"
+        ></div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex items-center">
+        <div
+          class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg shadow-md transition-all duration-300"
+          [class.bg-gradient-to-br]="activeStep >= 2"
+          [class.from-blue-600]="activeStep >= 2"
+          [class.to-indigo-600]="activeStep >= 2"
+          [class.text-white]="activeStep >= 2"
+          [class.bg-gray-100]="activeStep < 2"
+          [class.text-slate-400]="activeStep < 2"
+          [class.ring-4]="activeStep >= 2"
+          [class.ring-white]="activeStep >= 2"
+        >
+          3
+        </div>
+        <div class="ml-4">
+          <div
+            class="font-semibold"
+            [class.text-slate-800]="activeStep >= 2"
+            [class.text-slate-400]="activeStep < 2"
+          >
+            Payment
+          </div>
+          <div
+            class="text-sm"
+            [class.text-slate-600]="activeStep >= 2"
+            [class.text-slate-400]="activeStep < 2"
+          >
+            Secure checkout
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 1: Shipping -->
+    <div
+      *ngIf="activeStep === 0"
+      class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/50"
+    >
+      <h2
+        class="text-3xl font-bold text-slate-800 mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+      >
+        Shipping Address
+      </h2>
+      <form [formGroup]="shippingForm" (ngSubmit)="nextStep()" class="space-y-7">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+          <!-- Full Name -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2"
+              >Full Name <span class="text-red-500">*</span></label
+            >
+            <input type="text" formControlName="fullName" class="w-full px-5 py-4 bg-white border
+            border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500
+            transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400
+            shadow-sm" [class.border-red-400]="fullname?.invalid && fullname?.touched"
+            [class.focus:ring-red-500/30]="fullname?.invalid && fullname?.touched" placeholder="John
+            Doe">
+            <div
+              *ngIf="fullname?.invalid && fullname?.touched"
+              class="mt-2 text-sm text-red-600 flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div *ngIf="fullname?.hasError('required')">Full name is required</div>
+              <div *ngIf="fullname?.hasError('minlength')">Must be at least 3 characters</div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2"
+              >Email Address <span class="text-red-500">*</span></label
+            >
+            <input type="email" formControlName="email" class="w-full px-5 py-4 bg-white border
+            border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500
+            transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400
+            shadow-sm" [class.border-red-400]="email?.invalid && email?.touched"
+            [class.focus:ring-red-500/30]="email?.invalid && email?.touched"
+            placeholder="john@example.com">
+            <div
+              *ngIf="email?.invalid && email?.touched"
+              class="mt-2 text-sm text-red-600 flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div *ngIf="email?.hasError('required')">Email is required</div>
+              <div *ngIf="email?.hasError('email')">Please enter a valid email</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Street -->
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-2"
+            >Street Address <span class="text-red-500">*</span></label
+          >
+          <input type="text" formControlName="street" class="w-full px-5 py-4 bg-white border
+          border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500
+          transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400
+          shadow-sm" [class.border-red-400]="street?.invalid && street?.touched"
+          [class.focus:ring-red-500/30]="street?.invalid && street?.touched" placeholder="123 Main
+          Street, Apt 4B">
+          <div
+            *ngIf="street?.invalid && street?.touched"
+            class="mt-2 text-sm text-red-600 flex items-center gap-1"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <div *ngIf="street?.hasError('required')">Street address is required</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+          <!-- City -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2"
+              >City <span class="text-red-500">*</span></label
+            >
+            <input type="text" formControlName="city" class="w-full px-5 py-4 bg-white border
+            border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500
+            transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400
+            shadow-sm" [class.border-red-400]="city?.invalid && city?.touched"
+            [class.focus:ring-red-500/30]="city?.invalid && city?.touched" placeholder="New York">
+            <div
+              *ngIf="city?.invalid && city?.touched"
+              class="mt-2 text-sm text-red-600 flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div *ngIf="city?.hasError('required')">City is required</div>
+            </div>
+          </div>
+
+          <!-- Postal Code -->
+          <div>
+            <label class="block text-sm font-medium text-slate-700 mb-2"
+              >Postal Code <span class="text-red-500">*</span></label
+            >
+            <input type="text" formControlName="postalCode" class="w-full px-5 py-4 bg-white border
+            border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500
+            transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400
+            shadow-sm" [class.border-red-400]="postalCode?.invalid && postalCode?.touched"
+            [class.focus:ring-red-500/30]="postalCode?.invalid && postalCode?.touched"
+            placeholder="10001">
+            <div
+              *ngIf="postalCode?.invalid && postalCode?.touched"
+              class="mt-2 text-sm text-red-600 flex items-center gap-1"
+            >
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <div *ngIf="postalCode?.hasError('required')">Postal code is required</div>
+              <div *ngIf="postalCode?.hasError('pattern')">Must be 5 digits</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country Dropdown -->
+        <div class="relative">
+          <label class="block text-sm font-medium text-slate-700 mb-2"
+            >Country <span class="text-red-500">*</span></label
+          >
+          <input
+            type="text"
+            formControlName="country"
+            (input)="filterCountries($event.target.value)"
+            (focus)="showDropdown = true"
+            (blur)="hideDropdown()"
+            class="w-full px-5 py-4 bg-white border border-slate-200 rounded-2xl focus:ring-4 focus:ring-blue-500/30 focus:border-blue-500 transition-all duration-300 outline-none text-slate-800 placeholder:text-slate-400 shadow-sm"
+            placeholder="Egypt"
+            autocomplete="off"
+          />
+
+          <!-- Dropdown -->
+          <ul
+            *ngIf="showDropdown && filteredCountries.length"
+            class="absolute z-50 w-full mt-2 bg-white/95 backdrop-blur-xl border border-slate-200 rounded-2xl shadow-xl max-h-60 overflow-y-auto p-2"
+          >
+            <li
+              *ngFor="let c of filteredCountries"
+              (mousedown)="selectCountry(c.name)"
+              class="px-5 py-3 cursor-pointer hover:bg-gradient-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl transition-all duration-200 flex items-center gap-3"
+            >
+              <span class="font-medium text-slate-700">{{ c.name }}</span>
+            </li>
+          </ul>
+
+          <div
+            *ngIf="country?.invalid && country?.touched"
+            class="mt-2 text-sm text-red-600 flex items-center gap-1"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <div *ngIf="country?.hasError('required')">Country is required</div>
+          </div>
+        </div>
+
+        <div class="flex justify-end mt-10">
+          <button
+            type="button"
+            (click)="nextStep()"
+            [disabled]="shippingForm.invalid"
+            class="group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-500/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 shadow-lg transform hover:scale-105"
+          >
+            Continue to Delivery
+            <svg
+              class="w-6 h-6 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- STEP 2: Delivery -->
+    <div
+      *ngIf="activeStep === 1"
+      class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/50"
+    >
+      <h2
+        class="text-3xl font-bold text-slate-800 mb-8 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+      >
+        Choose Delivery Method
+      </h2>
+      <form [formGroup]="deliveryForm" class="space-y-6">
+        <div class="space-y-5">
+          <div
+            *ngFor="let method of deliveryMethods"
+            class="group border-2 rounded-3xl p-6 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+            [class.border-blue-600]="deliveryForm.value.deliveryMethod === method.id"
+            [class.bg-gradient-to-br]="deliveryForm.value.deliveryMethod === method.id"
+            [class.from-blue-50]="deliveryForm.value.deliveryMethod === method.id"
+            [class.to-indigo-50]="deliveryForm.value.deliveryMethod === method.id"
+            [class.border-slate-200]="deliveryForm.value.deliveryMethod !== method.id"
+            [class.hover:border-blue-400]="deliveryForm.value.deliveryMethod !== method.id"
+            (click)="selectDelivery(method.id)"
+          >
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-5">
+                <div
+                  class="w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all duration-300"
+                  [class.border-blue-600]="deliveryForm.value.deliveryMethod === method.id"
+                  [class.bg-blue-600]="deliveryForm.value.deliveryMethod === method.id"
+                  [class.border-slate-300]="deliveryForm.value.deliveryMethod !== method.id"
+                >
+                  <div
+                    *ngIf="deliveryForm.value.deliveryMethod === method.id"
+                    class="w-4 h-4 bg-white rounded-full shadow"
+                  ></div>
+                </div>
+                <div>
+                  <div class="font-semibold text-lg text-slate-800">{{ method.name }}</div>
+                  <div class="text-slate-600">{{ method.description }}</div>
+                </div>
+              </div>
+              <div
+                class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
+              >
+                {{ method.price | currency }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center mt-10">
+          <button
+            type="button"
+            (click)="prevStep()"
+            class="px-7 py-4 border-2 border-slate-300 text-slate-700 font-medium rounded-2xl hover:bg-slate-50 transition-all duration-300 flex items-center gap-3 shadow-md"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            Back
+          </button>
+          <button
+            type="button"
+            (click)="nextStep()"
+            [disabled]="!deliveryForm.value.deliveryMethod"
+            class="group px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 focus:ring-4 focus:ring-blue-500/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-3 shadow-lg transform hover:scale-105"
+          >
+            Continue to Payment
+            <svg
+              class="w-6 h-6 group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+<!-- STEP 3: Review Order - النسخة النهائية الفاخرة والشغالة 100% -->
+<div *ngIf="activeStep === 2" class="bg-white/90 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/70 overflow-hidden">
+
+  <div class="p-6 lg:p-10">
+
+    <h2 class="text-3xl lg:text-4xl font-extrabold text-center mb-10 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-700 bg-clip-text text-transparent">
+      Confirm & Pay Securely
+    </h2>
+
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+
+      <!-- Left Side: Order Details -->
+      <div class="lg:col-span-5 space-y-6">
+
+        <!-- Order Summary -->
+        <div class="bg-gradient-to-br from-slate-50/80 to-blue-50/40 rounded-2xl p-6 border border-slate-200/60 shadow-lg">
+          <h3 class="text-xl font-bold text-slate-800 mb-5 flex items-center gap-3">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+            </svg>
+            Order Summary
+          </h3>
+
+          <div class="space-y-4 text-base">
+            <div class="flex justify-between">
+              <span class="text-slate-600">Subtotal</span>
+              <span class="font-bold text-slate-900">{{ subtotal | currency }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-600">Shipping</span>
+              <span class="font-bold text-slate-900">{{ shippingPrice | currency }}</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-600">Delivery</span>
+              <span class="font-semibold text-indigo-600">{{ selectedDeliveryMethod?.name }}</span>
+            </div>
+
+            <div class="pt-4 border-t-2 border-dashed border-slate-300">
+              <div class="flex justify-between text-xl font-extrabold">
+                <span class="bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">Total</span>
+                <span class="bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent">{{ total | currency }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping Address -->
+        <div class="bg-gradient-to-br from-emerald-50/80 to-teal-50/40 rounded-2xl p-6 border border-emerald-200/60 shadow-lg">
+          <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-3">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            Shipping Address
+          </h3>
+          <div class="text-slate-700 font-medium leading-relaxed">
+            <div class="font-bold text-lg">{{ shippingForm.value.fullName }}</div>
+            <div>{{ shippingForm.value.street }}</div>
+            <div>{{ shippingForm.value.city }}, {{ shippingForm.value.postalCode }}</div>
+            <div class="font-semibold text-indigo-600">{{ shippingForm.value.country }}</div>
+            <div class="mt-2 text-slate-600 text-sm">{{ shippingForm.value.email }}</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Side: Payment -->
+      <div class="lg:col-span-7">
+        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200/80 p-7 lg:p-9">
+
+          <div class="flex items-center gap-4 mb-7">
+            <div class="p-3 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-xl">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-6-4h12a3 3 0 013 3v4a3 3 0 01-3 3H6a3 3 0 01-3-3v-4a3 3 0 013-3z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-slate-800">Payment Details</h3>
+              <p class="text-slate-500 text-sm">256-bit SSL Encrypted • Never stored</p>
+            </div>
+          </div>
+
+          <!-- Stripe Card Element - مضمون إنه يكتب -->
+          <div class="mb-5">
+            <div id="card-element" #cardElement
+                 class="h-14 px-5 py-4 bg-white border-2 border-slate-300 rounded-2xl focus-within:border-blue-600 focus-within:ring-4 focus-within:ring-blue-500/20 transition-all duration-300 shadow-inner text-lg">
+              <!-- Stripe will inject the Card input here -->
+            </div>
+            <div id="card-errors" role="alert" class="text-red-600 text-sm font-medium mt-2 min-h-6"></div>
+          </div>
+
+          
+
+          <!-- Card Icons + Secure Badge -->
+           <!-- الأربع بطاقات الأشهر عالميًا - حجم أنيق زي المواقع الكبيرة -->
+<div class="flex justify-center items-center gap-6 mb-8">
+
+  <!-- Visa -->
+  <svg class="h-9 w-14 drop-shadow-sm" viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="125" rx="12" fill="#17278F"/>
+    <path d="M82 38L68 87H54L68 38H82Z" fill="#FFB13B"/>
+    <path d="M142 38C138 38 134 40 131 42L109 87H127L130 79H143L146 87H165L149 38H142ZM134 55L139 47L142 55H134Z" fill="white"/>
+    <path d="M105 55L112 38H92L76 87H94L105 55Z" fill="white"/>
+    <path d="M54 38L38 78L35 70L28 38H12L26 87H44L54 38Z" fill="#17278F"/>
+  </svg>
+
+  <!-- Mastercard -->
+  <svg class="h-9 w-14 drop-shadow-sm" viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="125" rx="12" fill="white"/>
+    <circle cx="85" cy="62.5" r="38" fill="#EB001B"/>
+    <circle cx="115" cy="62.5" r="38" fill="#F79E1B"/>
+    <path d="M100 35V90C93 86 93 70 100 62.5C107 55 107 39 100 35Z" fill="#FF5F00"/>
+  </svg>
+
+  <!-- American Express -->
+  <svg class="h-9 w-14 drop-shadow-sm" viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="125" rx="12" fill="#0077CC"/>
+    <text x="100" y="76" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">AMEX</text>
+  </svg>
+
+  <!-- Apple Pay (الأكثر انتشارًا دلوقتي) -->
+  <svg class="h-9 w-14 drop-shadow-sm" viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="125" rx="12" fill="#000000"/>
+    <path d="M136 88c0 8-6 14-16 14-8 0-14-6-14-14 0-9 6-15 14-15 4 0 8 2 10 5 1 2 6 10 6 10Zm-8-30c-3-4-8-6-12-6-10 0-18 8-18 18 0 8 5 14 11 17 2 1 4 2 5 2 2 0 3-1 4-2l1-2 1-3c0-1 1-2 2-2h1c6-3 10-9 10-16 0-6-3-12-8-14-2-1-5-2-8-2Zm-5-4c3 0 5-2 6-4 1-3-1-6-4-6-2 0-5 2-6 4-1 3 1 6 4 6Zm-31 34c-5 0-9-4-9-9s4-9 9-9c3 0 5 1 7 3 1 1 2 3 2 5 0 3-1 5-2 6-2 2-4 4-7 4Zm12-24c0 8-6 14-14 14-9 0-15-6-15-14 0-9 6-15 15-15 8 0 14 6 14 15Zm-14-9c-5 0-9 4-9 9s4 9 9 9c5 0 9-4 9-9s-4-9-9-9Zm48-8c0-10-8-18-18-18s-18 8-18 18c0 9 7 16 16 17 1 0 2 0 3-1 1-1 2-3 2-5 0-1 1-2 2-2s2 1 2 2c0 4-2 7-5 9 8 2 14 9 14 17 0 11-9 20-20 20-10 0-18-7-19-16h11c1 5 5 8 11 8 7 0 12-5 12-11 0-7-5-12-12-12h-3c-8-1-14-7-14-15 0-8 7-15 15-15 7 0 13 5 14 11h-11Z" fill="white"/>
+  </svg>
+
+</div>
+     
+
+
+
+
+          <!-- Buttons - مظبوطة وفاخرة -->
+          <div class="flex flex-col sm:flex-row gap-4 pt-5 border-t border-slate-200">
+            <button type="button" (click)="prevStep()"
+                    class="px-7 py-3.5 border-2 border-slate-300 text-slate-700 font-medium rounded-xl hover:bg-slate-50 transition-all duration-300 flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+              Back
+            </button>
+
+            <button type="button" (click)="pay()"
+                    class="px-10 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-bold rounded-xl hover:from-blue-700 hover:to-indigo-800 focus:ring-4 focus:ring-blue-500/30 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center gap-3">
+              <span>Pay {{ total | currency }}</span>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+  </div>
+</div>

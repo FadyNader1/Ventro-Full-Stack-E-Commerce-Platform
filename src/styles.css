@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* ========================= */
+/* VENTRO – Official Color Palette 2025 */
+/* انسخ الكود ده كله في src/styles.css (تحت :root) */
+/* ========================= */
+
+:root {
+  /* Primary Colors - Indigo */
+  --ventro-primary:        #6366F1;  /* Indigo-500 → أزرار الدفع والـ CTA الرئيسية */
+  --ventro-primary-dark:   #4F46E5;  /* Indigo-600 → Hover + Navbar */
+  --ventro-primary-light:  #818CF8;  /* Indigo-400 → خلفيات خفيفة وحواف ناعمة */
+
+  /* Accent Colors - Pink */
+  --ventro-accent:         #EC4899;  /* Pink-500 → أيقونات، عناوين فرعية، تأثيرات */
+  --ventro-accent-dark:    #DB2777;  /* Pink-600 → Hover على الـ accent */
+
+  /* Gradient (الجراديانت الرسمي بتاعك) */
+  --ventro-gradient:       linear-gradient(135deg, #6366F1 0%, #A855F7 45%, #EC4899 100%);
+  --ventro-gradient-tr:    linear-gradient(to right, #6366F1, #A855F7, #EC4899);
+  --ventro-gradient-tb:    linear-gradient(to bottom, #6366F1, #A855F7, #EC4899);
+
+  /* Backgrounds */
+  --ventro-bg-main:        #F8FAFC;  /* Slate-50 → خلفية الصفحة الرئيسية */
+  --ventro-bg-card:        rgba(255, 255, 255, 0.92);  /* زجاجي فاخر */
+  --ventro-bg-glass:       rgba(255, 255, 255, 0.75);
+
+  /* Text Colors */
+  --ventro-text-primary:   #1E293B;  /* Slate-800 → عناوين كبيرة */
+  --ventro-text-secondary: #64748B;  /* Slate-500 → نصوص عادية */
+  --ventro-text-muted:     #94A3B8;  /* Slate-400 → placeholder ونصوص خفيفة */
+
+  /* Status Colors */
+  --ventro-success:        #10B981;  /* Emerald-500 → نجاح */
+  --ventro-success-dark:   #059669;  /* Emerald-600 */
+  --ventro-danger:         #EF4444;  /* Red-500 */
+  --ventro-warning:        #F59E0B;  /* Amber-500 */
+
+  /* Borders & Dividers */
+  --ventro-border:         #E2E8F0;  /* Slate-200 */
+  --ventro-border-light:   #CBD5E1;  /* Slate-300 */
+
+  /* Shadows (للكروت والأزرار) */
+  --ventro-shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.1);
+  --ventro-shadow-md:      0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --ventro-shadow-lg:      0 10px 15px -3px rgba(99, 102, 241, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --ventro-shadow-purple:  0 10px 25px -5px rgba(236, 72, 153, 0.35);
+}
+
+/* Dark Mode (اختياري – جاهز للتفعيل في أي وقت) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ventro-bg-main:        #0F172A;   /* Slate-900 */
+    --ventro-bg-card:        rgba(15, 23, 42, 0.85);
+    --ventro-bg-glass:       rgba(15, 23, 42, 0.7);
+    --ventro-text-primary:   #F1F5F9;   /* Slate-100 */
+    --ventro-text-secondary: #CBD5E1;   /* Slate-300 */
+    --ventro-border:         #334155;   /* Slate-700 */
+  }
+}
+

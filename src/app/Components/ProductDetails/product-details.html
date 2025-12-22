@@ -1,0 +1,194 @@
+<div class="max-w-7xl mx-auto px-4 py-8 lg:py-14">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-start" *ngIf="productDetails">    <!-- ====================== Images - Clean & Elegant ====================== -->
+    <div class="space-y-5 order-2 lg:order-1">
+      <!-- Main image -->
+      <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-50">
+        <img
+          [src]="mainImage"
+          [alt]="productDetails.name"
+          class="w-full h-80 sm:h-96 lg:h-[580px] object-cover transition-transform duration-1000 ease-out hover:scale-150" />
+      </div>
+
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-5 gap-3">
+        <div
+          *ngFor="let img of productDetails.photos; let i = index"
+          (click)="mainImage = img"
+          class="relative rounded-xl overflow-hidden cursor-pointer border-2 transition-all duration-300 hover:border-gray-500"
+          [class.border-gray-900]="mainImage === img"
+          [class.border-gray-300]="mainImage !== img">
+          <img
+            [src]="img"
+            [alt]="'View ' + (i + 1)"
+            class="w-full h-20 object-cover transition-transform duration-300 hover:scale-110">
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================== Product Info - Perfect Color Harmony ====================== -->
+    <div class="order-1 lg:order-2">
+      <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 sticky top-8 border border-gray-100">
+
+        <!-- Category -->
+        <p class="text-xs font-semibold text-indigo-600 uppercase tracking-wider mb-3">
+          {{ CategoryName }}
+        </p>
+
+        <!-- Product Name -->
+        <h1 class="text-3xl lg:text-4xl font-bold text-[#0f172a] mb-5 leading-tight">
+          {{ productDetails.name }}
+        </h1>
+
+        <!-- Price and discount -->
+        <div class="flex flex-wrap items-center gap-5 mb-7">
+          <span class="text-4xl lg:text-5xl font-bold text-rose-600">
+            ${{ productDetails.newPrice }}
+          </span>
+
+          <span *ngIf="productDetails.oldPrice" class="text-2xl text-gray-400 line-through">
+            ${{ productDetails.oldPrice }}
+          </span>
+
+          <span *ngIf="discountPercentage"
+                class="bg-emerald-100 text-emerald-700 px-5 py-2.5 rounded-full text-sm font-bold shadow-sm">
+            -{{ discountPercentage }}% OFF
+          </span>
+        </div>
+
+       <div *ngIf="productDetails.rating >0" class="flex items-center mb-4">
+            <div class="flex text-yellow-400">
+              <ng-container *ngFor="let star of [1,2,3,4,5]">
+                <svg 
+                  [class.text-gray-300]="star > productDetails.rating"
+                  class="w-4 h-4 fill-current" 
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                </svg>
+              </ng-container>
+            </div>
+            <span class="ml-2 text-xs text-gray-500 font-medium">({{ productDetails.rating }})</span>
+          </div>
+
+        <!-- Key Specifications -->
+        <div class="mb-10" *ngIf="keySpecsArray && keySpecsArray.length">
+          <h3 class="text-xl font-semibold text-[#1e293b] mb-5">Key Specifications</h3>
+          <ul class="space-y-4">
+            <li *ngFor="let spec of keySpecsArray" class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700 font-medium">{{ spec }}</span>
+            </li>
+          </ul>
+        </div>
+
+       
+        <!-- Buttons - Elegant & Attractive -->
+        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+
+        <div class="flex items-center w-full mt-6">
+
+  <button
+    *ngIf="productDetails.inventoryQuantity === 0"
+    [disabled]="true"
+    class="flex-1 bg-slate-200 text-slate-900 font-black text-[11px] py-4 px-8
+           rounded-2xl border border-slate-100
+           flex items-center justify-center gap-3
+           uppercase tracking-[0.25em]
+           opacity-70 cursor-not-allowed
+           relative overflow-hidden group">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728L5.636 5.636" />
+    </svg>
+
+    Out of Stock
+
+    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-slate-200/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+  </button>
+
+  <button
+    *ngIf="productDetails.inventoryQuantity > 0"
+    (click)="AddToCart(productDetails.id, 1, shippingAddress)"
+    class="flex-1 bg-[#0f172a] hover:bg-indigo-700 
+           text-white font-black text-[11px] py-4 px-8 
+           rounded-2xl shadow-[0_20px_40px_-10px_rgba(15,23,42,0.3)] 
+           hover:shadow-indigo-600/40 hover:-translate-y-1 
+           active:scale-[0.98] transition-all duration-500
+           flex items-center justify-center gap-3
+           uppercase tracking-[0.25em] cursor-pointer group">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+    </svg>
+    
+    Add to Cart
+  </button>
+
+</div>
+
+          <!-- Wishlist Button -->
+          <button *ngIf="isLogin"
+            (click)="toggleWishlist(productDetails.id)"
+            [ngClass]="isInWishlist(productDetails.id) 
+                       ? 'bg-red-500 text-white border-red-500 hover:bg-red-600 hover:border-red-600' 
+                       : 'bg-white text-red-500 border-red-500 hover:bg-red-50'"
+            class="flex-1 border-2 font-semibold text-lg py-3 px-6
+                   rounded-xl shadow-md hover:shadow-lg
+                   transition-all duration-300
+                   flex items-center justify-center gap-3
+                   focus:outline-none focus:ring-2 focus:ring-red-300">
+            <span class="text-xl">{{ isInWishlist(productDetails.id) ? '♥' : '♡' }}</span>
+            {{ isInWishlist(productDetails.id) ? 'Remove from Wishlist' : 'Add to Wishlist' }}
+          </button>
+
+        </div>
+
+        <!-- Description -->
+        <div class="border-t border-gray-200 pt-8 mt-8" *ngIf="productDetails.description">
+          <h3 class="text-xl font-semibold text-[#1e293b] mb-4">Description</h3>
+          <p class="text-gray-600 leading-relaxed text-base lg:text-lg whitespace-pre-line">
+            {{ productDetails.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== Premium Picks - Refined Colors ====================== -->
+<div class="max-w-7xl mx-auto px-4 py-16 bg-gray-50">
+  <div class="flex items-center justify-between mb-8">
+    <h2 class="text-3xl lg:text-4xl font-bold text-[#111111]">
+      Premium Picks
+    </h2>
+    <div class="flex gap-3">
+      <button (click)="scrollLeft()" class="w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 hover:bg-gray-100 transition flex items-center justify-center text-xl text-gray-700">
+        ‹
+      </button>
+      <button (click)="scrollRight()" class="w-12 h-12 rounded-full bg-white shadow-md border border-gray-200 hover:bg-gray-100 transition flex items-center justify-center text-xl text-gray-700">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <div #carousel class="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-4">
+    <div *ngFor="let item of relatedProducts" class="min-w-[280px] max-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-500 border border-gray-100 cursor-pointer overflow-hidden">
+      <div [routerLink]="['/details', item.id]" class="relative overflow-hidden rounded-t-2xl h-64 bg-gray-50">
+        <img
+          [src]="item.photos[0]"
+          [alt]="item.name"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+      </div>
+      <div class="p-6">
+        <h3 class="font-semibold text-[#111111] text-lg mb-3 line-clamp-2">
+          {{ item.name }}
+        </h3>
+        <p class="text-2xl font-bold text-[#1e293b]">
+          ${{ item.newPrice |currency}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

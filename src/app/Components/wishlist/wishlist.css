@@ -1,0 +1,47 @@
+/* ================= Success Toast ================= */
+:host ::ng-deep .p-toast .p-toast-message-success {
+  background: linear-gradient(135deg, #063af5, #16a34a) !important; /* أزرق → أخضر */
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem !important; /* زدتها شوية عشان تبقى أحسن */
+}
+
+:host ::ng-deep .p-toast .p-toast-message-success .p-toast-summary,
+:host ::ng-deep .p-toast .p-toast-message-success .p-toast-detail {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* ================= Warn / Remove Toast ================= */
+:host ::ng-deep .p-toast .p-toast-message-warn {
+  background: linear-gradient(135deg, #dc2626, #9c4141) !important; /* أحمر قوي */
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem !important;
+}
+
+:host ::ng-deep .p-toast .p-toast-message-warn .p-toast-summary,
+:host ::ng-deep .p-toast .p-toast-message-warn .p-toast-detail {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* ================= Error Toast (مهم جدًا للأخطاء) ================= */
+:host ::ng-deep .p-toast .p-toast-message-error {
+  background: linear-gradient(135deg, #ef4444, #b91c1c) !important; /* أحمر غامق للخطأ */
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem !important;
+}
+
+:host ::ng-deep .p-toast .p-toast-message-error .p-toast-summary,
+:host ::ng-deep .p-toast .p-toast-message-error .p-toast-detail {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}

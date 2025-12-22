@@ -1,0 +1,136 @@
+<nav class="w-full bg-[#010B22] text-white shadow-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex items-center justify-between h-16">
+
+      <div class="flex items-center gap-3">
+        <img src="logo.jpg" class="w-12 h-12 rounded-lg object-cover" alt="Ventro Logo">
+        <div>
+          <h1 class="text-xl font-extrabold tracking-wide">Ventro</h1>
+          <p class="text-xs text-indigo-400 -mt-1 font-medium">Smart Shopping</p>
+        </div>
+      </div>
+
+      <ul class="hidden md:flex items-center gap-6 text-lg font-medium">
+        <li>
+          <a routerLink="/home" 
+             routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+             class="hover:text-indigo-300 transition">Home</a>
+        </li>
+        <li>
+          <a routerLink="/shopping" 
+             routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+             class="hover:text-indigo-300 transition">Shop</a>
+        </li>
+        <li>
+          <a routerLink="/about" 
+             routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+             class="hover:text-indigo-300 transition">About Us</a>
+        </li>
+        <li>
+          <a routerLink="/best-seller" 
+             routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+             class="hover:text-indigo-300 transition">Best Seller</a>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+
+        
+
+        <button class="cursor-pointer relative p-2 hover:bg-white/10 rounded-md transition"
+          (click)="GoToBasket()">
+          <i class="fa fa-shopping-cart fa-xl"></i>
+          <span *ngIf="cartCount > 0" class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+           {{cartCount}}
+          </span>
+        </button>
+
+        <button *ngIf="isLogin" class="cursor-pointer relative p-2 hover:bg-white/10 rounded-md transition group"
+                routerLink="/orders">
+          <i class="fas fa-clipboard-list fa-xl transition group-hover:scale-110"></i>
+
+          <span *ngIf="ordersCount > 0"
+                class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-semibold shadow-md">
+            {{ ordersCount }}
+          </span>
+        </button>
+
+
+        <button *ngIf="isLogin"  class="cursor-pointer relative p-2 hover:bg-white/10 rounded-md transition group"
+                routerLink="/wishlist">
+          <i class="fas fa-heart fa-xl text-white transition group-hover:scale-110"></i>
+
+          <span *ngIf="wishlistCount > 0"
+                class="absolute -top-1 -right-1 bg-rose-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full font-semibold shadow-md">
+            {{ wishlistCount }}
+          </span>
+        </button>
+
+        <div class="relative">
+          <button matButton [matMenuTriggerFor]="menu" 
+                  class="flex items-center gap-2 p-2 rounded-md cursor-pointer hover:bg-white/10 transition">
+            <i class="fa fa-user fa-xl text-white"></i>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <ul class="py-2 bg-white"> <li *ngIf="!isLogin">
+                <a routerLink="/login" class="flex items-center px-4 py-2 hover:bg-indigo-50 transition text-gray-800">
+                  <i class="fas fa-sign-in-alt mr-2 text-indigo-900"></i> Login
+                </a>
+              </li>
+              <li *ngIf="!isLogin">
+                <a routerLink="/register" class="flex items-center px-4 py-2 hover:bg-indigo-50 transition text-gray-800">
+                  <i class="fas fa-user-plus mr-2 text-indigo-900"></i> Register
+                </a>
+              </li>
+              <li *ngIf="isLogin">
+                <a (click)="Logout()" class="cursor-pointer flex items-center px-4 py-2 hover:bg-rose-50 transition text-gray-800">
+                  <i class="fas fa-sign-out-alt mr-2 text-rose-600"></i> Logout
+                </a>
+              </li>
+            </ul>
+          </mat-menu>
+        </div>
+
+        <label for="mobile-menu" class="md:hidden p-2 hover:bg-white/10 rounded-md cursor-pointer">
+          <i class="fa fa-bars fa-lg"></i>
+        </label>
+
+      </div>
+    </div>
+  </div>
+
+  <input type="checkbox" id="mobile-menu" class="hidden peer">
+
+  <div class="peer-checked:block hidden md:hidden bg-[#010B22]/95 backdrop-blur-md">
+    <div class="px-4 py-4 space-y-3">
+
+      <a routerLink="/home" 
+         routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+         class="block px-3 py-2 rounded-lg hover:bg-white/10 transition text-white">Home</a>
+         
+      <a routerLink="/shopping" 
+         routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+         class="block px-3 py-2 rounded-lg hover:bg-white/10 transition text-white">Shopping</a>
+         
+      <a routerLink="/about" 
+         routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+         class="block px-3 py-2 rounded-lg hover:bg-white/10 transition text-white">About Us</a>
+         
+      <a routerLink="/best-seller" 
+         routerLinkActive="text-indigo-400 font-semibold underline underline-offset-8 decoration-2"
+         class="block px-3 py-2 rounded-lg hover:bg-white/10 transition text-white">Best Seller</a>
+
+      <form class="flex items-center gap-2 pt-2 border-t border-white/10">
+        <input type="text" placeholder="Search..." 
+               class="flex-1 px-3 py-2 rounded-lg text-gray-900 focus:outline-none">
+        <button type="button" 
+                class="px-4 py-2 bg-indigo-900 text-white rounded-lg hover:bg-indigo-950 transition">
+          Search
+        </button>
+      </form>
+
+    </div>
+  </div>
+</nav>

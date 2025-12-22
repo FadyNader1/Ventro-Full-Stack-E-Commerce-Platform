@@ -1,0 +1,129 @@
+<div class="min-h-screen bg-[#FDFDFF] py-12 px-4 lg:py-20">
+  <div class="max-w-7xl mx-auto">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 px-2">
+      <div>
+        <h1 class="text-4xl lg:text-6xl font-black text-[#010B22] tracking-tighter">Shopping Cart</h1>
+        <p class="text-gray-500 mt-2 font-medium">Manage your items and proceed to checkout.</p>
+      </div>
+      
+      <button *ngIf="items.length > 0" (click)="ClearBasket()"
+              class="group flex items-center gap-2 px-6 py-3 bg-red-50 text-red-600 hover:bg-red-600 hover:text-white rounded-2xl font-bold text-sm transition-all duration-300 shadow-sm cursor-pointer">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+        </svg>
+        Clear Basket
+      </button>
+    </div>
+
+    <div *ngIf="items.length; else emptyState" class="grid lg:grid-cols-12 gap-10 items-start">
+      
+      <div class="lg:col-span-8 space-y-6">
+        <div *ngFor="let item of items; trackBy: trackById"
+             class="group bg-white rounded-[2.5rem] p-4 sm:p-6 border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-500">
+          
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="relative w-full md:w-48 h-48 bg-[#F9FAFB] rounded-[2rem] overflow-hidden flex-shrink-0">
+              <img [src]="basUrl + item.photos[0]" [alt]="item.productName"
+                   class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            </div>
+
+            <div class="flex-1 flex flex-col justify-between py-2">
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="text-2xl font-black text-[#1F2937] mb-2">{{ item.productName }}</h3>
+                  <p class="text-gray-500 text-sm line-clamp-2 italic">{{ item.description }}</p>
+                </div>
+                
+                <button (click)="removeItem(item.productId)"
+                        class="cursor-pointer flex items-center gap-1.5 px-3 py-1.5 bg-red-50 text-red-500 hover:bg-red-500 hover:text-white rounded-lg font-bold text-xs transition-all duration-300 uppercase tracking-tighter">
+                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+                   </svg>
+                   Remove
+                </button>
+              </div>
+
+              <div class="mt-8 flex flex-wrap items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                  <div class="flex flex-col">
+                    <span class="text-2xl font-black text-[#111827]">{{ item.newPrice | currency }}</span>
+                    <span *ngIf="item.oldPrice && item.oldPrice > item.newPrice" 
+                          class="text-sm text-gray-400 line-through font-bold">
+                      {{ item.oldPrice | currency }}
+                    </span>
+                  </div>
+                </div>
+
+                <div class="flex items-center bg-[#F9FAFB] p-1.5 rounded-2xl border border-gray-200 shadow-sm">
+                  <button (click)="decrease(item)"
+                          class="cursor-pointer w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center hover:bg-gray-50 active:scale-90 transition-all">
+                    <svg class="w-4 h-4 text-[#010B22]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4"/></svg>
+                  </button>
+
+                  <span class="w-12 text-center font-black text-[#010B22] text-lg">{{ item.quantity }}</span>
+
+                  <button (click)="increase(item)"
+                          class="cursor-pointer w-10 h-10 rounded-xl bg-[#010B22] shadow-lg flex items-center justify-center hover:bg-indigo-600 active:scale-90 transition-all">
+                    <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4"/></svg>
+                  </button>
+                </div>
+
+                <div class="text-right ml-auto md:ml-0">
+                  <p class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-1">Subtotal</p>
+                  <p class="text-xl font-black text-indigo-600">{{ (item.newPrice * item.quantity) | currency }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-4 sticky top-10">
+        <div class="bg-[#010B22] rounded-[3rem] p-10 text-white shadow-2xl relative">
+          <h4 class="text-2xl font-black mb-10 tracking-tight">Summary</h4>
+
+          <div class="space-y-6">
+            <div class="flex justify-between items-center pb-6 border-b border-white/10">
+              <span class="text-gray-400 font-medium">Subtotal</span>
+              <span class="text-xl font-bold">{{ subtotal | currency }}</span>
+            </div>
+            
+            <div class="flex justify-between items-center pb-6 border-b border-white/10">
+              <span class="text-gray-400 font-medium">Shipping</span>
+              <span class="text-xs font-black uppercase tracking-widest text-indigo-400">Calculated later</span>
+            </div>
+
+            <div class="pt-4 flex justify-between items-end">
+                <span class="text-gray-400 font-medium mb-1">Total Amount</span>
+                <span class="text-4xl font-black text-white tracking-tighter">{{ subtotal | currency }}</span>
+            </div>
+          </div>
+
+          <div class="mt-12 space-y-4">
+            <button *ngIf="isLogin" routerLink="/checkout"
+                    class="cursor-pointer w-full py-5 bg-indigo-600 hover:bg-white hover:text-[#010B22] text-white font-black text-lg rounded-2xl shadow-xl transition-all duration-500">
+              Proceed to Checkout
+            </button>
+
+            <button (click)="gotoshopping()"
+                    class="cursor-pointer w-full py-5 bg-white/5 hover:bg-white/10 text-white font-bold rounded-2xl transition-all duration-300 border border-white/10">
+              Continue Shopping
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <ng-template #emptyState>
+      <div class="text-center py-24 bg-white rounded-[3rem] border border-dashed border-gray-200">
+        <h3 class="text-4xl font-black text-[#010B22] mb-4">Your basket is empty</h3>
+        <button (click)="gotoshopping()"
+                class="mt-8 px-12 py-5 bg-[#010B22] text-white font-black rounded-2xl shadow-2xl hover:bg-indigo-600 transition-all duration-500">
+          Start Shopping
+        </button>
+      </div>
+    </ng-template>
+
+  </div>
+</div>
