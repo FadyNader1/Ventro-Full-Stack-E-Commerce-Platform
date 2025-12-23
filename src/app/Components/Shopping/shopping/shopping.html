@@ -57,20 +57,18 @@
                 <span class="font-bold text-xs lg:text-sm">All Collection</span>
               </button>
 
-              <button *ngFor="let item of allcategorys"
+            <button *ngFor="let item of allcategorys"
         (click)="SelectCategoryId(item.id)"
         [class]="item.id === CategoryId 
-                 ? 'bg-gradient-to-r from-[#010B22] to-indigo-800 text-white shadow-md' 
-                 : 'bg-white text-gray-600 border-gray-200'"
-        class="cursor-pointer flex-shrink-0 w-full sm:w-auto lg:w-full flex items-center justify-center sm:justify-start gap-3 px-4 py-3 rounded-xl transition-all duration-300 border hover:border-indigo-200">
+                  ? 'bg-gradient-to-r from-[#010B22] to-indigo-800 text-white shadow-lg scale-[1.02]' 
+                  : 'bg-white text-gray-600 border-gray-100 hover:bg-gray-50'"
+        class="cursor-pointer flex-shrink-0 w-full sm:w-auto lg:w-full flex items-center justify-start gap-3 px-4 py-3 rounded-xl transition-all duration-300 border hover:shadow-md group">
   
-  <!-- الحرف الأول على الجانب (يسار على lg وما فوق، وفي الوسط على الموبايل) -->
-  <div class="w-8 h-8 rounded-md flex items-center justify-center font-bold text-white bg-indigo-700 text-xs flex-shrink-0">
+  <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-white bg-indigo-600 text-xs flex-shrink-0 group-hover:scale-110 transition-transform">
     {{ item.name.charAt(0).toUpperCase() }}
   </div>
   
-  <!-- اسم الكاتيجوري – مخفي على الموبايل الصغير جدًا ويظهر من sm فما فوق -->
-  <span class="font-bold text-sm hidden sm:inline">
+  <span class="font-bold text-sm block">
     {{ item.name }}
   </span>
 </button>
