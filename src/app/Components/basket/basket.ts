@@ -12,10 +12,11 @@ import { AuthService } from '../../Services/auth-service';
   templateUrl: './basket.html',
   styleUrls: ['./basket.css'],  // ✅ صححتها
 })
+
 export class Basket {
   basketId: string = '';
   AllItemsInBasket!: Item[];
-  basUrl: string = 'https://localhost:7155/';
+  basUrl: string = 'https://ventro.runasp.net/';
   quantity: number = 1;
   shippingAddress:ShippingAddress | null = null;
   deliveryMethodId:number =0;
