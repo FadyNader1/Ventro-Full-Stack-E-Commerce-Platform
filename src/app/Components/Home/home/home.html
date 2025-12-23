@@ -1,359 +1,315 @@
 <div class="overflow-hidden">
-<header class="hero-section relative w-full overflow-hidden h-screen">
-  <div class="absolute inset-0 bg-black/40"></div>
+  <header class="hero-section relative w-full overflow-hidden min-h-[80vh] md:h-screen">
+    <div class="absolute inset-0 bg-black/40"></div>
 
-  <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-6 md:px-12 overflow-x-hidden">
-    
-    <om-fade direction="up">
-      <om-gradient-text 
-        text="Discover More, Save More with Ventro!" 
-        styleClass="gradient-text-style" 
-        class="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight drop-shadow-2xl inline-block">
-      </om-gradient-text>
-    </om-fade>
+    <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 md:px-12">
+      
+      <om-fade direction="up">
+        <om-gradient-text 
+          text="Discover More, Save More with Ventro!" 
+          styleClass="gradient-text-style" 
+          class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black tracking-tight drop-shadow-2xl inline-block leading-tight">
+        </om-gradient-text>
+      </om-fade>
 
-    <om-fade direction="down">
-      <p class="mt-6 max-w-2xl text-lg md:text-xl lg:text-2xl font-light text-white/90 drop-shadow-md">
-        Handpicked collection just for you – quality products, unbeatable prices, and exclusive deals.
-      </p>
-    </om-fade>
+      <om-fade direction="down">
+        <p class="mt-4 md:mt-6 max-w-2xl text-base md:text-xl lg:text-2xl font-light text-white/90 drop-shadow-md px-2">
+          Handpicked collection just for you – quality products, unbeatable prices, and exclusive deals.
+        </p>
+      </om-fade>
 
-    <om-fade direction="up">
-      <a routerLink="/shopping" class="mt-10 inline-block px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-lg">
-        Shop Now
-      </a>
-    </om-fade>
-  </div>
-</header>
+      <om-fade direction="up">
+        <a routerLink="/shopping" class="mt-8 md:mt-10 inline-block px-6 py-3 md:px-8 md:py-4 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition duration-300 shadow-lg text-sm md:text-base">
+          Shop Now
+        </a>
+      </om-fade>
+    </div>
+  </header>
 
-<section class="py-16 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 ">
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
 
         <om-fade direction="left">
-      <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200">
-        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
-          <i class="fas fa-gem text-xl"></i>
-        </div>
-        <div>
-          <h3 class="text-xl font-black text-gray-900 mb-2 tracking-tight">Quality Obsession</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">We only sell what we’d buy ourselves. No compromises.</p>
-        </div>
-      </div>
-    </om-fade>
-      
+          <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200 h-full">
+            <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-gem text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg md:text-xl font-black text-gray-900 mb-2 tracking-tight">Quality Obsession</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">We only sell what we’d buy ourselves. No compromises.</p>
+            </div>
+          </div>
+        </om-fade>
+        
         <om-fade direction="up">
-      <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200">
-        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-          <i class="fas fa-bolt text-xl"></i>
-        </div>
-        <div>
-          <h3 class="text-xl font-black text-gray-900 mb-2 tracking-tight">Speed First</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">2-hour delivery in cities. Same-day everywhere else.</p>
-        </div>
-      </div>
-    </om-fade>
-
-      
+          <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200 h-full">
+            <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-bolt text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg md:text-xl font-black text-gray-900 mb-2 tracking-tight">Speed First</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">2-hour delivery in cities. Same-day everywhere else.</p>
+            </div>
+          </div>
+        </om-fade>
 
         <om-fade direction="down">
-      <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200">
-        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
-          <i class="fas fa-heart text-xl"></i>
-        </div>
-        <div>
-          <h3 class="text-xl font-black text-gray-900 mb-2 tracking-tight">Customer Love</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">24/7 support. 60-day returns. We’re always here for you.</p>
-        </div>
-      </div>
-    </om-fade>
-
-     
+          <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200 h-full">
+            <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-red-500 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-heart text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg md:text-xl font-black text-gray-900 mb-2 tracking-tight">Customer Love</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">24/7 support. 60-day returns. We’re always here for you.</p>
+            </div>
+          </div>
+        </om-fade>
 
         <om-fade direction="right">
-       <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200">
-        <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
-          <i class="fas fa-leaf text-xl"></i>
-        </div>
-        <div>
-          <h3 class="text-xl font-black text-gray-900 mb-2 tracking-tight">Sustainable Future</h3>
-          <p class="text-gray-500 leading-relaxed text-sm">Eco-packaging. Carbon-neutral shipping. Planet first.</p>
-        </div>
+          <div class="flex flex-col items-start space-y-4 group rounded-2xl p-5 bg-gray-200 h-full">
+            <div class="w-12 h-12 bg-gray-50 flex items-center justify-center rounded-2xl group-hover:bg-green-600 group-hover:text-white transition-all duration-300">
+              <i class="fas fa-leaf text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-lg md:text-xl font-black text-gray-900 mb-2 tracking-tight">Sustainable Future</h3>
+              <p class="text-gray-500 leading-relaxed text-sm">Eco-packaging. Carbon-neutral shipping. Planet first.</p>
+            </div>
+          </div>
+        </om-fade>
+
       </div>
-    </om-fade>
-
-    
-
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6">
-    <!-- Header الخاص بالقسم -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
-      <div>
-        <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-          <om-split-text [text]="'Top Categories'"></om-split-text>
-        </h2>
+  <section class="py-12 md:py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 md:mb-12 text-center md:text-left">
+        <div>
+          <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+            <om-split-text [text]="'Top Categories'"></om-split-text>
+          </h2>
           <om-fade direction="right">
-       <p class="mt-3 text-xl text-gray-800 font-light">
-          Pick a category and start shopping
-        </p>
-    </om-fade>
-      
-      </div>
+            <p class="mt-2 md:mt-3 text-lg md:text-xl text-gray-800 font-light">
+              Pick a category and start shopping
+            </p>
+          </om-fade>
+        </div>
 
         <om-fade direction="down">
-       <a routerLink="/shopping" 
-         class="mt-6 md:mt-0 hidden md:flex items-center text-indigo-600 font-semibold text-lg hover:text-indigo-700 transition group">
-        See All Categories
-        <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" 
-             fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
-    </om-fade>
+          <a routerLink="/shopping" 
+             class="mt-6 md:mt-0 hidden md:flex items-center text-indigo-600 font-semibold text-lg hover:text-indigo-700 transition group">
+            See All Categories
+            <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" 
+                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </om-fade>
+      </div>
 
-    </div>
-
-    <!-- Grid الكاتيجوريز -->
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      <div *ngFor="let cat of categories" 
-           class="group cursor-pointer relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2">
-
-        <!-- الكارت نفسه -->
-       
-          <om-fade direction="up">
-       <div [routerLink]="['/shopping']" 
-             [queryParams]="{categoryId: cat.id}"
-             class="relative w-full h-40 bg-gradient-to-br from-[#010B22] to-indigo-950 
-                        flex items-center justify-between p-6 
-                        overflow-hidden">
-
-          <!-- Overlay خفيف يظهر عند الـ hover -->
-          <div class="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-
-          <!-- النص -->
-          <div class="relative z-10">
-            <h3 class="text-2xl font-bold text-white group-hover:text-indigo-200 transition-colors duration-300">
+   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  <div *ngFor="let cat of categories" class="group relative w-full">
+    
+    <om-fade direction="up">
+      <div [routerLink]="['/shopping']" 
+           [queryParams]="{categoryId: cat.id}"
+           class="relative w-full overflow-hidden rounded-2xl bg-[#010B22] border border-white/10 p-6 
+                  min-h-[140px] md:h-52 flex flex-col justify-between transition-all duration-500 
+                  hover:border-indigo-500/50 hover:shadow-[0_20px_50px_rgba(79,70,229,0.2)]">
+        
+        <div class="absolute -right-4 -top-4 w-24 h-24 bg-indigo-600/10 rounded-full blur-2xl group-hover:bg-indigo-600/30 transition-all duration-700"></div>
+        
+        <div class="relative z-10">
+          <div class="flex items-center gap-4 mb-2">
+            <div class="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg group-hover:scale-110 transition-transform duration-500">
+              <i class="fas fa-tag text-white text-base md:text-lg"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-extrabold text-white tracking-tight group-hover:text-indigo-300 transition-colors">
               {{ cat.name }}
             </h3>
-            <p class="mt-1 text-sm text-gray-300">Explore Items →</p>
           </div>
+          <p class="text-xs text-gray-400 font-medium ml-14 md:ml-0 md:mt-1 group-hover:text-gray-300">
+            Premium Selection
+          </p>
+        </div>
 
-          <!-- السهم اللي يظهر عند الـ hover -->
-          <div class="relative z-10 opacity-0 group-hover:opacity-100 translate-x-4 group-hover:translate-x-0 transition-all duration-500">
-            <svg class="w-8 h-8 text-indigo-400" 
-                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" 
-                    d="M9 5l7 7-7 7"></path>
+        <div class="relative z-10 flex items-center justify-between mt-4">
+          <span class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-gray-500 group-hover:text-white transition-colors">
+            Shop Collection
+          </span>
+          <div class="flex items-center justify-center w-8 h-8 rounded-full bg-white/5 text-white group-hover:bg-white group-hover:text-black transition-all duration-500">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </div>
-
         </div>
-    </om-fade>
+
+        <div class="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
-    </div>
-
-    <!-- See All للموبايل -->
-    <div class="mt-10 text-center md:hidden">
-      <a routerLink="/shop" 
-         class="inline-flex items-center text-indigo-600 font-semibold text-lg hover:text-indigo-700 transition">
-        See All Categories
-        <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-        </svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section class="py-28 relative overflow-hidden bg-white">
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="flex flex-col items-center text-center mb-20">
-      <span class="text-indigo-600 font-bold tracking-[0.3em] uppercase text-xs mb-3">Fresh Collection</span>
-     
-        <om-fade direction="down">
-       <h2 class="text-5xl md:text-6xl font-black text-gray-900 tracking-tighter mb-4">
-        NEW <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-indigo-500 to-gray-900">ARRIVALS</span>
-      </h2>
     </om-fade>
-      <om-fade direction="left">
-      <p class="text-gray-400 text-lg max-w-xl">Experience the latest innovation in tech and style. Curated perfection, just landed at Ventro.</p>
-    </om-fade>
-    </div>
-
-      <om-fade direction="left">
-    <app-offer-products [products]="(newArrivals | slice:0:4) || []"></app-offer-products>
-    </om-fade>
-
-  
-      <om-fade direction="up">
-       <div class="mt-16 text-center">
-      <button routerLink="/shop" class="group relative inline-flex items-center justify-center px-8 py-3 font-bold text-gray-900 transition-all duration-200 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white" role="button">
-        Explore New Collection
-        <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
-      </button>
-    </div>
-    </om-fade>
-  </div>
-</section>
-
-<div class="py-12 bg-gradient-to-br from-[#010B22] to-indigo-950     border-y border-gray-50 overflow-hidden relative">
-  <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-  <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-
-  <div class="flex animate-marquee-infinite whitespace-nowrap">
-    <div class="flex items-center justify-around min-w-full gap-16 px-8">
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">APPLE</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">SAMSUNG</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">SONY</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">LOGITECH</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">DELL</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">RAZER</span>
-    </div>
-    <div class="flex items-center justify-around min-w-full gap-16 px-8">
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">APPLE</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">SAMSUNG</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">SONY</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">LOGITECH</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">DELL</span>
-      <span class="text-3xl font-black text-gray-200 hover:text-indigo-700 transition-colors cursor-default">RAZER</span>
-    </div>
-
   </div>
 </div>
 
-<section class="py-28 bg-white relative overflow-hidden">
-  
-  <div class="absolute -top-24 -right-24 w-96 h-96 bg-red-50/50 blur-[120px] rounded-full"></div>
-  <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-50/50 blur-[120px] rounded-full"></div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    
-    <div class="flex flex-col md:flex-row items-center justify-between mb-16 gap-8">
-      <div class="text-center md:text-left">
-        <div class="inline-flex items-center space-x-2 bg-red-50 border border-red-100 px-3 py-1.5 rounded-full mb-4">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
-          </span>
-          <span class="text-red-600 text-[10px] font-black uppercase tracking-[0.2em]">Live Offers</span>
-        </div>
-        
-     
-          <om-fade direction="up">
-         <h2 class="text-4xl md:text-5xl font-black tracking-tight text-gray-900">
-          Don't Miss <span class="relative">
-            <span class="relative z-10 text-red-600">The Drop.</span>
-            <span class="absolute bottom-2 left-0 w-full h-3 bg-red-100/50 -z-10 rounded-sm"></span>
-          </span>
-        </h2>
-    </om-fade>
+      <div class="mt-8 text-center md:hidden">
+        <a routerLink="/shop" class="inline-flex items-center text-indigo-600 font-semibold text-base hover:text-indigo-700 transition">
+          See All Categories
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
       </div>
-      
-      <div class="hidden md:block h-[1px] flex-grow mx-10 bg-gradient-to-r from-red-200 via-transparent to-transparent"></div>
-      
-      <p class="text-gray-400 font-medium max-w-xs text-center md:text-right leading-relaxed">
-        Premium tech deals ending soon. Grab yours before the timer hits zero.
-      </p>
     </div>
+  </section>
 
-      <om-fade direction="right">
-      <app-offer-products [products]="(offerItems | slice:0:4) || []"></app-offer-products>
-    </om-fade>
+  <section class="py-16 md:py-28 relative overflow-hidden bg-white">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      <div class="flex flex-col items-center text-center mb-12 md:mb-20">
+        <span class="text-indigo-600 font-bold tracking-[0.3em] uppercase text-[10px] md:text-xs mb-3">Fresh Collection</span>
+        <om-fade direction="down">
+          <h2 class="text-3xl md:text-6xl font-black text-gray-900 tracking-tighter mb-4 uppercase">
+            NEW <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-indigo-500 to-gray-900">ARRIVALS</span>
+          </h2>
+        </om-fade>
+        <om-fade direction="left">
+          <p class="text-gray-400 text-base md:text-lg max-w-xl">Experience the latest innovation in tech and style. Curated perfection, just landed at Ventro.</p>
+        </om-fade>
+      </div>
+
+      <om-fade direction="left">
+        <app-offer-products [products]="(newArrivals | slice:0:3) || []"></app-offer-products>
+      </om-fade>
 
       <om-fade direction="up">
-       <div class="mt-20 text-center">
-      <button routerLink="/shopping" [queryParams]="{onSale: true}" 
-              class="group relative inline-flex items-center justify-center px-12 py-5 font-black uppercase tracking-tighter text-white transition-all duration-300 bg-gray-900 rounded-2xl hover:bg-red-600 shadow-[0_20px_40px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(220,38,38,0.2)] transform hover:-translate-y-1">
-        <span>Claim Your Discount Now</span>
-        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </button>
+        <div class="mt-12 md:mt-16 text-center">
+          <button routerLink="/shop" class="group relative inline-flex items-center justify-center px-6 py-3 md:px-8 md:py-3 font-bold text-gray-900 transition-all duration-200 bg-white border-2 border-gray-900 rounded-full hover:bg-gray-900 hover:text-white text-sm md:text-base">
+            Explore New Collection
+            <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </button>
+        </div>
+      </om-fade>
     </div>
-    </om-fade>
+  </section>
 
-   
+  <div class="py-8 md:py-12 bg-gradient-to-br from-[#010B22] to-indigo-950 border-y border-gray-50 overflow-hidden relative">
+    <div class="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#010B22] to-transparent z-10"></div>
+    <div class="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#010B22] to-transparent z-10"></div>
 
+    <div class="flex animate-marquee-infinite whitespace-nowrap">
+      <div class="flex items-center justify-around min-w-full gap-8 md:gap-16 px-4">
+        <span class="text-xl md:text-3xl font-black text-gray-200/50 hover:text-indigo-400 transition-colors cursor-default">APPLE</span>
+        <span class="text-xl md:text-3xl font-black text-gray-200/50 hover:text-indigo-400 transition-colors cursor-default">SAMSUNG</span>
+        <span class="text-xl md:text-3xl font-black text-gray-200/50 hover:text-indigo-400 transition-colors cursor-default">SONY</span>
+        <span class="text-xl md:text-3xl font-black text-gray-200/50 hover:text-indigo-400 transition-colors cursor-default">LOGITECH</span>
+        <span class="text-xl md:text-3xl font-black text-gray-200/50 hover:text-indigo-400 transition-colors cursor-default uppercase">Dell</span>
+      </div>
+    </div>
   </div>
-</section>
-<footer class="bg-white border-t border-gray-100 pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+
+  <section class="py-16 md:py-28 bg-white relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-64 md:w-96 h-64 md:h-96 bg-red-50/50 blur-[80px] md:blur-[120px] rounded-full"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       
-      <div class="space-y-6">
-        <h2 class="text-3xl font-black text-gray-900 tracking-tighter uppercase">Ventro.</h2>
-        <p class="text-gray-500 leading-relaxed">
-          Redefining the way you shop for tech and lifestyle. Premium quality, lightning-fast delivery, and a future-focused mindset.
+      <div class="flex flex-col md:flex-row items-center justify-between mb-12 md:mb-16 gap-6 text-center md:text-left">
+        <div class="flex flex-col items-center md:items-start">
+          <div class="inline-flex items-center space-x-2 bg-red-50 border border-red-100 px-3 py-1.5 rounded-full mb-4">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-red-600"></span>
+            </span>
+            <span class="text-red-600 text-[10px] font-black uppercase tracking-[0.2em]">Live Offers</span>
+          </div>
+          <om-fade direction="up">
+            <h2 class="text-3xl md:text-5xl font-black tracking-tight text-gray-900">
+              Don't Miss <span class="relative inline-block">
+                <span class="relative z-10 text-red-600">The Drop.</span>
+                <span class="absolute bottom-2 left-0 w-full h-2 md:h-3 bg-red-100/50 -z-10 rounded-sm"></span>
+              </span>
+            </h2>
+          </om-fade>
+        </div>
+        <p class="text-gray-400 font-medium max-w-xs leading-relaxed text-sm md:text-base">
+          Premium tech deals ending soon. Grab yours before the timer hits zero.
         </p>
-        <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-facebook-f"></i>
-          </a>
+      </div>
+
+      <om-fade direction="right">
+        <app-offer-products [products]="(offerItems | slice:0:3) || []"></app-offer-products>
+      </om-fade>
+
+      <om-fade direction="up">
+        <div class="mt-12 md:mt-20 text-center px-4">
+          <button routerLink="/shopping" [queryParams]="{onSale: true}" 
+                  class="group relative inline-flex w-full sm:w-auto items-center justify-center px-8 md:px-12 py-4 md:py-5 font-black uppercase tracking-tighter text-white transition-all duration-300 bg-gray-900 rounded-2xl hover:bg-red-600 shadow-xl transform hover:-translate-y-1 text-sm md:text-base">
+            <span>Claim Discount Now</span>
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+        </div>
+      </om-fade>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-gray-100 pt-12 md:pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-16">
+        
+        <div class="space-y-6 text-center sm:text-left">
+          <h2 class="text-3xl font-black text-gray-900 tracking-tighter uppercase">Ventro.</h2>
+          <p class="text-gray-500 leading-relaxed text-sm">
+            Redefining the way you shop for tech and lifestyle. Premium quality, lightning-fast delivery.
+          </p>
+          <div class="flex justify-center sm:justify-start space-x-4">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Collections</h4>
+          <ul class="space-y-3 text-gray-500 text-sm">
+            <li><a routerLink="/shopping" class="hover:text-black transition">All Products</a></li>
+            <li><a routerLink="/shopping" class="hover:text-black transition">Flash Sales</a></li>
+            <li><a routerLink="/shopping" class="hover:text-black transition">New Arrivals</a></li>
+          </ul>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Support</h4>
+          <ul class="space-y-3 text-gray-500 text-sm">
+            <li><a href="#" class="hover:text-black transition">Order Tracking</a></li>
+            <li><a href="#" class="hover:text-black transition">Returns</a></li>
+            <li><a href="#" class="hover:text-black transition">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="text-center sm:text-left">
+          <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Newsletter</h4>
+          <p class="text-gray-500 text-sm mb-4">Subscribe for special offers.</p>
+          <form class="relative max-w-xs mx-auto sm:mx-0">
+            <input type="email" placeholder="Email" class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-gray-900 outline-none">
+            <button class="absolute right-2 top-1.5 bg-gray-900 text-white px-4 py-1.5 rounded-lg text-[10px] font-bold">JOIN</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center">
+        <p class="text-gray-400 text-xs md:text-sm font-medium">© 2025 Ventro Store.</p>
+        <div class="flex items-center space-x-6 text-xl md:text-2xl text-gray-300">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-apple-pay"></i>
         </div>
       </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Collections</h4>
-        <ul class="space-y-4 text-gray-500">
-          <li><a routerLink="/shopping" class="hover:text-black transition">All Products</a></li>
-          <li><a routerLink="/shopping" [queryParams]="{onSale: true}" class="hover:text-black transition">Flash Sales</a></li>
-          <li><a routerLink="/shopping" class="hover:text-black transition">New Arrivals</a></li>
-          <li><a routerLink="/shopping" class="hover:text-black transition">Best Sellers</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Support</h4>
-        <ul class="space-y-4 text-gray-500">
-          <li><a href="#" class="hover:text-black transition">Order Tracking</a></li>
-          <li><a href="#" class="hover:text-black transition">Shipping Policy</a></li>
-          <li><a href="#" class="hover:text-black transition">Returns & Exchanges</a></li>
-          <li><a href="#" class="hover:text-black transition">FAQs</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Stay in the loop</h4>
-        <p class="text-gray-500 text-sm mb-4">Subscribe to get special offers and first look at new drops.</p>
-        <form class="relative">
-          <input type="email" placeholder="Your email address" 
-                 class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-gray-900 outline-none transition">
-          <button routerLink="/login" class="cursor-pointer absolute right-2 top-1.5 bg-gray-900 text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-600 transition">
-            JOIN
-          </button>
-        </form>
-      </div>
-
     </div>
-
-    <div class="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <p class="text-gray-400 text-sm font-medium">
-        © 2025 Ventro Store. Built for the modern world.
-      </p>
-      
-      <div class="flex items-center space-x-6 text-2xl text-red-950">
-        <i class="fab fa-cc-visa"></i>
-        <i class="fab fa-cc-mastercard"></i>
-        <i class="fab fa-cc-paypal"></i>
-        <i class="fab fa-apple-pay"></i>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 </div>

@@ -3,23 +3,23 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#010B22]">
         <div class="absolute inset-0 -z-10">
             <div class="absolute inset-0 bg-gradient-to-b from-[#010B22]/80 via-[#010B22]/60 to-[#010B22]"></div>
-            <div class="absolute top-20 left-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-32 right-32 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div class="absolute top-20 left-20 w-48 h-48 md:w-96 md:h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-32 right-32 w-48 h-48 md:w-80 md:h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6 text-center z-10 py-32">
-            <h1 class="text-6xl md:text-8xl font-black text-white mb-6 leading-tight animate-fade-up tracking-tighter">
-                The Shopping Experience <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">You Deserve.</span>
+        <div class="max-w-7xl mx-auto px-6 text-center z-10 py-20 md:py-32">
+            <h1 class="text-4xl md:text-8xl font-black text-white mb-6 leading-tight animate-fade-up tracking-tighter">
+                The Shopping Experience <br class="hidden md:block"><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">You Deserve.</span>
             </h1>
 
-            <p class="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-10 animate-fade-up delay-300">
+            <p class="text-lg md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-10 animate-fade-up delay-300 px-2">
                 We started Ventro because <span class="font-bold text-white border-b-2 border-indigo-500">online shopping shouldn’t feel like a chore</span>. 
                 It should feel like discovery. Like excitement. Like <em>you matter</em>.
             </p>
 
             <a routerLink="/about" class="inline-block animate-fade-up delay-600">
-                <div class="w-16 h-16 mx-auto bg-white text-[#010B22] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(99,102,241,0.4)] transform hover:scale-110 transition-all duration-300">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-14 h-14 md:w-16 md:h-16 mx-auto bg-white text-[#010B22] rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_50px_rgba(99,102,241,0.4)] transform hover:scale-110 transition-all duration-300">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
                 </div>
@@ -31,42 +31,42 @@
         </video>
     </section>
 
-    <section id="story" class="py-24 px-6 bg-white">
+    <section id="story" class="py-16 md:py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-black text-[#010B22] mb-4 tracking-tighter">Our Story</h2>
-                <p class="text-xl text-gray-500 max-w-3xl mx-auto font-medium">It all started with a frustration.</p>
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-4xl md:text-6xl font-black text-[#010B22] mb-4 tracking-tighter">Our Story</h2>
+                <p class="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto font-medium">It all started with a frustration.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
-                <div class="space-y-6 animate-slide-left">
-                    <p class="text-lg text-gray-700 leading-relaxed">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-16 items-center mb-12 md:mb-20">
+                <div class="space-y-6 animate-slide-left order-2 lg:order-1">
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                         In <strong>2024</strong>, <span class="text-[#010B22] font-black border-l-4 border-indigo-600 pl-4">Fady Nader</span> was shopping online — again — and felt <em>nothing</em>.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed italic">
+                    <p class="text-base md:text-lg text-gray-600 leading-relaxed italic">
                         "Why does every store look the same? Why is delivery slow? Why doesn’t anyone care?"
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                         So he called his co-founder <span class="text-[#010B22] font-black border-l-4 border-indigo-400 pl-4">Sara Khalil</span>, and together they decided: 
                         <span class="font-bold text-indigo-700">"Let’s fix this."</span>
                     </p>
-                    <p class="text-xl font-black text-[#010B22] pt-4">
+                    <p class="text-lg md:text-xl font-black text-[#010B22] pt-4">
                         → That was the birth of <span class="tracking-widest uppercase">Ventro</span>.
                     </p>
                 </div>
 
-                <div class="relative animate-slide-right group">
-                    <div class="absolute -inset-4 bg-indigo-100 rounded-[2.5rem] transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
+                <div class="relative animate-slide-right group order-1 lg:order-2">
+                    <div class="absolute -inset-4 bg-indigo-100 rounded-[2rem] md:rounded-[2.5rem] transform rotate-2 group-hover:rotate-0 transition-transform duration-500"></div>
                     <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
                         alt="Ahmed & Sara founding Ventro" 
-                        class="relative w-full h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
-                    <div class="absolute bottom-6 left-6 bg-[#010B22] text-white px-6 py-2 rounded-full text-sm font-bold tracking-widest shadow-xl">
+                        class="relative w-full h-64 md:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white">
+                    <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 bg-[#010B22] text-white px-4 py-1 md:px-6 md:py-2 rounded-full text-[10px] md:text-sm font-bold tracking-widest shadow-xl">
                         EST. 2024
                     </div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-[#010B22] transition-all duration-500">
                     <div class="w-14 h-14 bg-[#010B22] group-hover:bg-white rounded-2xl flex items-center justify-center mb-6 transition-colors">
                         <svg class="w-7 h-7 text-white group-hover:text-[#010B22]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
@@ -102,44 +102,44 @@
         </div>
     </section>
 
-    <section class="py-20 bg-[#f8fafc] border-y border-gray-100">
+    <section class="py-12 md:py-20 bg-[#f8fafc] border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                    <p class="text-4xl md:text-5xl font-black text-[#010B22] mb-2">50K+</p>
-                    <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Happy Customers</p>
+                    <p class="text-3xl md:text-5xl font-black text-[#010B22] mb-2">50K+</p>
+                    <p class="text-[10px] md:text-xs font-bold text-indigo-600 uppercase tracking-widest">Happy Customers</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-black text-[#010B22] mb-2">120+</p>
-                    <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Global Brands</p>
+                    <p class="text-3xl md:text-5xl font-black text-[#010B22] mb-2">120+</p>
+                    <p class="text-[10px] md:text-xs font-bold text-indigo-600 uppercase tracking-widest">Global Brands</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-black text-[#010B22] mb-2">99.9%</p>
-                    <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest">On-time Delivery</p>
+                    <p class="text-3xl md:text-5xl font-black text-[#010B22] mb-2">99.9%</p>
+                    <p class="text-[10px] md:text-xs font-bold text-indigo-600 uppercase tracking-widest">On-time Delivery</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-black text-[#010B22] mb-2">24/7</p>
-                    <p class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Concierge Support</p>
+                    <p class="text-3xl md:text-5xl font-black text-[#010B22] mb-2">24/7</p>
+                    <p class="text-[10px] md:text-xs font-bold text-indigo-600 uppercase tracking-widest">Concierge Support</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-white">
+    <section class="py-16 md:py-24 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl md:text-6xl font-black text-[#010B22] mb-4">Meet The Team</h2>
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-4xl md:text-6xl font-black text-[#010B22] mb-4">Meet The Team</h2>
                 <div class="h-1.5 w-24 bg-indigo-600 mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
                 <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 group hover:shadow-2xl transition-all duration-500">
                     <div class="relative mb-6 overflow-hidden rounded-2xl aspect-square">
                         <img src="kero.jpg" alt="Kero Samy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                         <div class="absolute inset-0 bg-[#010B22]/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-2xl font-black text-[#010B22]">Kero Samy</h3>
+                        <h3 class="text-xl md:text-2xl font-black text-[#010B22]">Kero Samy</h3>
                         <p class="text-indigo-600 font-bold mb-3 uppercase text-xs tracking-widest">Head of Operations</p>
                         <p class="text-gray-500 italic">"Fast. Flawless. Every time."</p>
                     </div>
@@ -151,7 +151,7 @@
                         <div class="absolute inset-0 bg-[#010B22]/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-2xl font-black text-[#010B22]">Sara Khalil</h3>
+                        <h3 class="text-xl md:text-2xl font-black text-[#010B22]">Sara Khalil</h3>
                         <p class="text-indigo-600 font-bold mb-3 uppercase text-xs tracking-widest">Chief Product Officer</p>
                         <p class="text-gray-500 italic">"Perfection is in the details."</p>
                     </div>
@@ -163,7 +163,7 @@
                         <div class="absolute inset-0 bg-[#010B22]/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     </div>
                     <div class="text-center">
-                        <h3 class="text-2xl font-black text-[#010B22]">Fady Nader</h3>
+                        <h3 class="text-xl md:text-2xl font-black text-[#010B22]">Fady Nader</h3>
                         <p class="text-indigo-600 font-bold mb-3 uppercase text-xs tracking-widest">CEO & Founder</p>
                         <p class="text-gray-500 italic">"I build stores that make people smile."</p>
                     </div>
@@ -172,121 +172,107 @@
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-indigo-50/30">
+    <section class="py-16 md:py-24 px-6 bg-indigo-50/30">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div class="relative order-2 md:order-1">
                     <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" 
                         alt="Green Initiative" 
-                        class="w-full h-[500px] object-cover rounded-[3rem] shadow-2xl">
-                    <div class="absolute -bottom-10 -right-10 bg-emerald-500 text-white p-10 rounded-3xl shadow-xl hidden lg:block">
-                        <p class="text-4xl font-black">100%</p>
-                        <p class="font-bold">Recyclable</p>
+                        class="w-full h-64 md:h-[500px] object-cover rounded-[2rem] md:rounded-[3rem] shadow-2xl">
+                    <div class="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-10 bg-emerald-500 text-white p-6 md:p-10 rounded-2xl md:rounded-3xl shadow-xl">
+                        <p class="text-2xl md:text-4xl font-black">100%</p>
+                        <p class="text-xs md:text-base font-bold">Recyclable</p>
                     </div>
                 </div>
-                <div class="space-y-8 order-1 md:order-2">
-                    <h2 class="text-5xl font-black text-[#010B22] leading-tight">Green by Design. <br><span class="text-emerald-600">Kind by Nature.</span></h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">
+                <div class="space-y-6 md:space-y-8 order-1 md:order-2">
+                    <h2 class="text-3xl md:text-5xl font-black text-[#010B22] leading-tight">Green by Design. <br><span class="text-emerald-600">Kind by Nature.</span></h2>
+                    <p class="text-base md:text-lg text-gray-600 leading-relaxed">
                         We believe business can be a force for good. That's why we've committed to <strong>carbon-neutral shipping</strong> and plastic-free packaging. For every order you place, we plant a tree to help restore our planet’s lungs.
                     </p>
                     <div class="flex items-center gap-4 text-emerald-700 font-black">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                        <span class="text-xl">50,000+ Trees Planted Worldwide</span>
+                        <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                        <span class="text-sm md:text-xl">50,000+ Trees Planted Worldwide</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 bg-[#010B22] text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="text-5xl md:text-7xl font-black mb-8 tracking-tighter">Ready to Shop <br>the Future?</h2>
-            <p class="text-xl mb-12 text-gray-400">Join a community that values quality, speed, and the planet.</p>
+    <section class="py-20 md:py-32 px-6 bg-[#010B22] text-white relative overflow-hidden text-center">
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-7xl font-black mb-8 tracking-tighter leading-tight">Ready to Shop <br>the Future?</h2>
+            <p class="text-lg md:text-xl mb-12 text-gray-400 px-4">Join a community that values quality, speed, and the planet.</p>
             
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center px-4">
                 <a routerLink="/shopping"
-                    class="px-12 py-5 bg-white text-[#010B22] font-black text-xl rounded-2xl shadow-xl hover:shadow-indigo-500/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                    class="px-8 py-4 md:px-12 md:py-5 bg-white text-[#010B22] font-black text-lg md:text-xl rounded-2xl shadow-xl flex items-center justify-center gap-3">
                     Shop Collection
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </a>
                 
                 <a routerLink="/home" 
-                    class="px-12 py-5 border-2 border-white/20 text-white font-black text-xl rounded-2xl hover:bg-white/5 transition-all duration-300">
+                    class="px-8 py-4 md:px-12 md:py-5 border-2 border-white/20 text-white font-black text-lg md:text-xl rounded-2xl hover:bg-white/5 transition-all">
                     Our Community
                 </a>
             </div>
         </div>
     </section>
-<footer class="bg-white border-t border-gray-100 pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-      
-      <div class="space-y-6">
-        <h2 class="text-3xl font-black text-gray-900 tracking-tighter uppercase">Ventro.</h2>
-        <p class="text-gray-500 leading-relaxed">
-          Redefining the way you shop for tech and lifestyle. Premium quality, lightning-fast delivery, and a future-focused mindset.
-        </p>
-        <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all">
-            <i class="fab fa-facebook-f"></i>
-          </a>
+
+    <footer class="bg-white border-t border-gray-100 pt-16 md:pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-black text-gray-900 tracking-tighter uppercase">Ventro.</h2>
+                    <p class="text-gray-500 leading-relaxed">
+                        Redefining the way you shop for tech and lifestyle. Premium quality, lightning-fast delivery.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Collections</h4>
+                    <ul class="space-y-4 text-gray-500">
+                        <li><a routerLink="/shopping" class="hover:text-black transition">All Products</a></li>
+                        <li><a routerLink="/shopping" [queryParams]="{onSale: true}" class="hover:text-black transition">Flash Sales</a></li>
+                        <li><a routerLink="/shopping" class="hover:text-black transition">New Arrivals</a></li>
+                        <li><a routerLink="/shopping" class="hover:text-black transition">Best Sellers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Support</h4>
+                    <ul class="space-y-4 text-gray-500">
+                        <li><a href="#" class="hover:text-black transition">Order Tracking</a></li>
+                        <li><a href="#" class="hover:text-black transition">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-black transition">Returns</a></li>
+                        <li><a href="#" class="hover:text-black transition">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Stay in the loop</h4>
+                    <p class="text-gray-500 text-sm mb-4">Subscribe to get special offers.</p>
+                    <form class="relative">
+                        <input type="email" placeholder="Email address" class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-gray-900 outline-none transition">
+                        <button routerLink="/login" class="absolute right-2 top-1.5 bg-gray-900 text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-600 transition">JOIN</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-gray-400 text-sm font-medium">© 2025 Ventro Store. Built for the modern world.</p>
+                <div class="flex items-center space-x-6 text-2xl text-red-950 opacity-30">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                    <i class="fab fa-apple-pay"></i>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Collections</h4>
-        <ul class="space-y-4 text-gray-500">
-          <li><a routerLink="/shopping" class="hover:text-black transition">All Products</a></li>
-          <li><a routerLink="/shopping" [queryParams]="{onSale: true}" class="hover:text-black transition">Flash Sales</a></li>
-          <li><a routerLink="/shopping" class="hover:text-black transition">New Arrivals</a></li>
-          <li><a routerLink="/shopping" class="hover:text-black transition">Best Sellers</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Support</h4>
-        <ul class="space-y-4 text-gray-500">
-          <li><a href="#" class="hover:text-black transition">Order Tracking</a></li>
-          <li><a href="#" class="hover:text-black transition">Shipping Policy</a></li>
-          <li><a href="#" class="hover:text-black transition">Returns & Exchanges</a></li>
-          <li><a href="#" class="hover:text-black transition">FAQs</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 class="text-sm font-black uppercase tracking-widest text-gray-900 mb-6">Stay in the loop</h4>
-        <p class="text-gray-500 text-sm mb-4">Subscribe to get special offers and first look at new drops.</p>
-        <form class="relative">
-          <input type="email" placeholder="Your email address" 
-                 class="w-full bg-gray-50 border-none rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-gray-900 outline-none transition">
-          <button routerLink="/login" class="cursor-pointer absolute right-2 top-1.5 bg-gray-900 text-white px-4 py-1.5 rounded-lg text-xs font-bold hover:bg-indigo-600 transition">
-            JOIN
-          </button>
-        </form>
-      </div>
-
-    </div>
-
-    <div class="border-t border-gray-50 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <p class="text-gray-400 text-sm font-medium">
-        © 2025 Ventro Store. Built for the modern world.
-      </p>
-      
-      <div class="flex items-center space-x-6 text-2xl text-red-950">
-        <i class="fab fa-cc-visa"></i>
-        <i class="fab fa-cc-mastercard"></i>
-        <i class="fab fa-cc-paypal"></i>
-        <i class="fab fa-apple-pay"></i>
-      </div>
-    </div>
-  </div>
-</footer>
-
+    </footer>
 </div>

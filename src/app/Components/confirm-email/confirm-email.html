@@ -1,13 +1,15 @@
-<div class="min-h-screen flex items-center justify-center bg-[#010B22] relative overflow-hidden p-6">
+<div class="min-h-screen flex items-center justify-center bg-[#010B22] relative overflow-hidden p-4 sm:p-6">
   
-  <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 blur-[120px] rounded-full"></div>
-  <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full"></div>
+  <!-- Background Blobs – مخفية على الموبايل الصغير جدًا لتحسين الأداء -->
+  <div class="hidden sm:block absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-indigo-600/20 blur-[120px] rounded-full"></div>
+  <div class="hidden sm:block absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/20 blur-[120px] rounded-full"></div>
 
   <div class="relative w-full max-w-4xl bg-white/[0.02] backdrop-blur-2xl rounded-[2.5rem] border border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] overflow-hidden">
     
     <div *ngIf="isSuccess" class="flex flex-col md:flex-row min-h-[500px]">
       
-      <div class="w-full md:w-5/12 p-12 bg-gradient-to-br from-[#010B22] via-indigo-950 to-[#010B22] flex flex-col justify-between border-r border-white/5">
+      <!-- Left Side (Dark) -->
+      <div class="w-full md:w-5/12 p-8 sm:p-10 lg:p-12 bg-gradient-to-br from-[#010B22] via-indigo-950 to-[#010B22] flex flex-col justify-between border-r md:border-r border-white/5">
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.3)]">
             <span class="text-2xl font-black text-[#010B22]">V</span>
@@ -15,9 +17,9 @@
           <span class="text-xl font-bold text-white tracking-widest uppercase">Ventro</span>
         </div>
 
-        <div class="mt-12">
-          <h2 class="text-4xl lg:text-5xl font-black text-white leading-tight">Verified & Ready.</h2>
-          <p class="mt-4 text-indigo-200/70 text-lg font-medium leading-relaxed italic">
+        <div class="mt-8 sm:mt-12">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight">Verified & Ready.</h2>
+          <p class="mt-4 text-indigo-200/70 text-base sm:text-lg font-medium leading-relaxed italic">
             Your journey with Ventro excellence begins now.
           </p>
         </div>
@@ -27,23 +29,24 @@
         </div>
       </div>
 
-      <div class="w-full md:w-7/12 p-12 bg-white flex flex-col justify-center items-center text-center">
+      <!-- Right Side (White) -->
+      <div class="w-full md:w-7/12 p-8 sm:p-10 lg:p-12 bg-white flex flex-col justify-center items-center text-center">
         <div class="relative mb-8">
             <div class="absolute inset-0 bg-emerald-500/20 blur-2xl rounded-full scale-150 animate-pulse"></div>
-            <div class="relative w-24 h-24 bg-emerald-50 rounded-3xl flex items-center justify-center shadow-inner">
-              <svg class="w-12 h-12 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+            <div class="relative w-20 h-20 sm:w-24 sm:h-24 bg-emerald-50 rounded-3xl flex items-center justify-center shadow-inner">
+              <svg class="w-10 h-10 sm:w-12 sm:h-12 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>
         </div>
 
-        <h3 class="text-3xl font-black text-slate-900 mb-4">Email Confirmed!</h3>
-        <p class="text-slate-500 text-lg mb-10 max-w-sm">
+        <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-4">Email Confirmed!</h3>
+        <p class="text-slate-500 text-base sm:text-lg mb-8 sm:mb-10 max-w-sm">
           Welcome to the family. Your account is fully activated and ready for use.
         </p>
 
         <button (click)="goToLogin()"
-                class="group relative w-full max-w-xs py-5 bg-[#010B22] text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl transition-all duration-300 hover:bg-indigo-700 hover:-translate-y-1 active:scale-95 overflow-hidden">
+                class="group relative w-full max-w-xs py-4 sm:py-5 bg-[#010B22] text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] shadow-2xl transition-all duration-300 hover:bg-indigo-700 hover:-translate-y-1 active:scale-95 overflow-hidden">
           <span class="relative z-10 flex items-center justify-center gap-3">
             Enter Dashboard
             <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,22 +55,23 @@
           </span>
         </button>
 
-        <div class="mt-8 flex items-center gap-2">
+        <div class="mt-6 sm:mt-8 flex items-center gap-2">
             <span class="w-2 h-2 bg-emerald-500 rounded-full animate-ping"></span>
             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Auto-redirecting to login...</p>
         </div>
       </div>
     </div>
 
-    <div *ngIf="isError" class="p-16 text-center bg-white flex flex-col items-center">
-      <div class="w-20 h-20 bg-rose-50 rounded-3xl flex items-center justify-center mb-8 border border-rose-100 shadow-sm">
-        <svg class="w-10 h-10 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+    <!-- Error State -->
+    <div *ngIf="isError" class="p-8 sm:p-12 lg:p-16 text-center bg-white flex flex-col items-center justify-center min-h-[500px]">
+      <div class="w-16 h-16 sm:w-20 sm:h-20 bg-rose-50 rounded-3xl flex items-center justify-center mb-6 sm:mb-8 border border-rose-100 shadow-sm">
+        <svg class="w-8 h-8 sm:w-10 sm:h-10 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </div>
 
-      <h3 class="text-3xl font-black text-slate-900 mb-3">Verification Failed</h3>
-      <p class="text-rose-600 font-bold mb-10 bg-rose-50 px-6 py-2 rounded-full text-sm inline-block">
+      <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-3">Verification Failed</h3>
+      <p class="text-rose-600 font-bold mb-8 sm:mb-10 bg-rose-50 px-6 py-2 rounded-full text-sm inline-block">
         {{ errorMessage || 'Invalid or expired confirmation link' }}
       </p>
 

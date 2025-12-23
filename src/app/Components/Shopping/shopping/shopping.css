@@ -1,40 +1,23 @@
-/* لازم يكون في أول الملف بالظبط */
+
+/* الجزء بتاع الـ CSS بتاعك محطوط زي ما هو مع إضافة بسيطة للـ Scroll */
 @reference "tailwindcss";
 
-/* كلاسات الكاتيجوريز – فخمة وشغالة 100% */
-.cat-btn {
-  @apply w-full flex items-center px-6 py-5 rounded-2xl transition-all duration-500 overflow-hidden relative;
-  gap: 1rem;
-}
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-.cat-icon {
-  @apply w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg;
-}
+.cat-btn { @apply w-full flex items-center px-6 py-5 rounded-2xl transition-all duration-500 overflow-hidden relative; gap: 1rem; }
+.cat-icon { @apply w-12 h-12 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-lg; }
+.cat-active { @apply bg-gradient-to-r from-indigo-600 to-purple-700 text-white shadow-2xl scale-105 ring-4 ring-purple-400/30; }
+.cat-inactive { @apply bg-gray-50/80 text-gray-700 border border-transparent hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 hover:shadow-xl hover:scale-102 hover:border-purple-300; }
 
-.cat-active {
-  @apply bg-gradient-to-r from-indigo-600 to-purple-700 text-white shadow-2xl scale-105 ring-4 ring-purple-400/30;
-}
-
-.cat-inactive {
-  @apply bg-gray-50/80 text-gray-700 border border-transparent hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 hover:shadow-xl hover:scale-102 hover:border-purple-300;
-}
-
-/* Pagination فخم جدًا */
 ::ng-deep .luxury-paginator {
-  .mat-mdc-paginator {
-    background: transparent;
-  }
-  .mat-mdc-paginator-container {
-    gap: 1rem !important;
-  }
-  .mat-mdc-icon-button {
-    @apply w-12 h-12 rounded-2xl bg-white border border-gray-200 text-gray-700 shadow-lg transition-all duration-300 hover:text-white hover:shadow-2xl hover:scale-110;
-    background: white;
-  }
-  .mat-mdc-icon-button:hover {
-    background: linear-gradient(to right, #a855f7, #ec4899);
-  }
-  .mat-mdc-select-trigger {
-    @apply h-12 px-6 rounded-2xl bg-white border border-gray-300 font-bold hover:border-purple-500 transition-all;
-  }
+  .mat-mdc-paginator { background: transparent; }
+  .mat-mdc-paginator-container { gap: 1rem !important; justify-content: center !important; }
+  .mat-mdc-icon-button { @apply w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white border border-gray-200 text-gray-700 shadow-lg transition-all duration-300; background: white; }
+  .mat-mdc-icon-button:hover { background: linear-gradient(to right, #a855f7, #ec4899); color: white; }
 }
+
+
+  /* إخفاء سكرول بار الفئات في الموبايل لشكل أنظف */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

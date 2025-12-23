@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { BasketServices } from '../../../Services/basket-services';
 import { BehaviorSubject } from 'rxjs';
@@ -8,11 +8,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { AuthService } from '../../../Services/auth-service';
 import { WishlistService } from '../../../Services/wishlist-service';
 import { CheckoutServices } from '../../../Services/checkout-services';
+import { FormsModule } from '@angular/forms'; 
 
-@Component({
+ @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive, RouterModule, MatButtonModule, MatMenuModule, NgIf],
-  templateUrl: './navbar.html',
+  imports: [RouterLink, RouterLinkActive, RouterModule, MatButtonModule, MatMenuModule, NgIf,FormsModule],
+templateUrl: './navbar.html',
   styleUrl: './navbar.css',
 })
 export class Navbar implements OnInit {
@@ -67,7 +68,11 @@ Logout() {
   });
 }
 
+isMenuOpen: boolean = false;
 
+closeMenu() {
+  this.isMenuOpen = false;
+}
 
 
 }

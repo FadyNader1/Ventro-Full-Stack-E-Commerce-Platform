@@ -16,7 +16,7 @@ import { AuthService } from '../../Services/auth-service';
 export class Basket {
   basketId: string = '';
   AllItemsInBasket!: Item[];
-  basUrl: string = 'https://ventro.runasp.net/';
+  baseUrl: string = 'https://ventro.runasp.net/';
   quantity: number = 1;
   shippingAddress:ShippingAddress | null = null;
   deliveryMethodId:number =0;
