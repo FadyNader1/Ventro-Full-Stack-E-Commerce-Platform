@@ -34,7 +34,8 @@ export class Shopping  {
   CategoryId?: number;
   selectedSort?: string;
 
-  // استخدمنا ElementRef + optional لأن الـ ViewChild بيبقى undefined في البداية
+
+ 
   @ViewChild('searchinput') searchinput?: ElementRef<HTMLInputElement>;
   @ViewChild('sortvalue') sortvalue?: ElementRef<HTMLSelectElement>;
 
