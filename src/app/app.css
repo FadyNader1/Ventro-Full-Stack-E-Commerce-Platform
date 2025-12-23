@@ -1,53 +1,78 @@
 /* ================= Common Toast Styling ================= */
-:host ::ng-deep .p-toast .p-toast-message {
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
-  border-radius: 1.25rem !important; /* حواف ناعمة جداً تماشياً مع كروت المنتجات */
+:host ::ng-deep .p-toast {
+  width: 25rem; /* العرض الافتراضي */
+  max-width: 90vw; /* لضمان عدم خروج التوست عن شاشة الموبايل */
 }
 
-/* ================= Success Toast (Ventro Green/Indigo) ================= */
+:host ::ng-deep .p-toast .p-toast-message {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
+  border-radius: 1.25rem !important;
+  margin-bottom: 1rem;
+}
+
+/* ================= Success Toast ================= */
 :host ::ng-deep .p-toast .p-toast-message-success {
-  /* تدرج من كحلي الموقع إلى أخضر الزمرد الهادئ */
   background: linear-gradient(135deg, #010B22 0%, #064e3b 100%) !important;
   color: #ffffff !important;
 }
 
-:host ::ng-deep .p-toast .p-toast-message-success .p-toast-icon-close {
-  color: #ffffff !important;
-}
-
-/* ================= Warn / Remove Toast (Ventro Rose/Dark) ================= */
+/* ================= Warn / Remove Toast ================= */
 :host ::ng-deep .p-toast .p-toast-message-warn {
-  /* تدرج من كحلي الموقع إلى الأحمر الياقوتي الغامق */
   background: linear-gradient(135deg, #010B22 0%, #991b1b 100%) !important;
   color: #ffffff !important;
 }
 
-/* ================= Text Styles ================= */
+/* ================= Text Styles & Typography ================= */
 :host ::ng-deep .p-toast .p-toast-message .p-toast-summary {
-  font-family: 'Inter', sans-serif; /* أو الخط المستخدم في موقعك */
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-weight: 800 !important;
-  font-size: 0.9rem !important;
+  font-size: 0.95rem !important;
   letter-spacing: 0.025em !important;
   text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
 :host ::ng-deep .p-toast .p-toast-message .p-toast-detail {
   font-weight: 400 !important;
   font-size: 0.85rem !important;
   opacity: 0.9;
+  line-height: 1.4;
 }
 
-/* تعديل أيقونة الإغلاق */
+/* ================= Close Icon Customization ================= */
 :host ::ng-deep .p-toast .p-toast-icon-close {
-  width: 2rem !important;
-  height: 2rem !important;
+  width: 2.2rem !important;
+  height: 2.2rem !important;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
 }
 
 :host ::ng-deep .p-toast .p-toast-icon-close:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(90deg);
+}
+
+/* ================= Responsive Adjustments (Mobile) ================= */
+@media screen and (max-width: 576px) {
+  :host ::ng-deep .p-toast {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+
+  :host ::ng-deep .p-toast .p-toast-message .p-toast-summary {
+    font-size: 0.85rem !important;
+  }
+
+  :host ::ng-deep .p-toast .p-toast-message .p-toast-detail {
+    font-size: 0.75rem !important;
+  }
 }
