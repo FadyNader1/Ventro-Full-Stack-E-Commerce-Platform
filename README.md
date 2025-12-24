@@ -1,59 +1,89 @@
-# Ventro
+# 🚀 Ventro API - Endpoints Documentation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.7.
+This document provides a comprehensive list of all available API endpoints for the **Ventro E-Commerce System**.
 
-## Development server
+**Base URL (Local):** `https://localhost:7155`  
+**Live API:** [ventro.runasp.net](https://ventro.runasp.net/)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+### 🛒 1. Product Controller
+*Base Path: `/api/Product`*
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | [/api/Product/getallproducts](https://localhost:7155/api/Product/getallproducts) | Get all products with (Filter/Sort/Paging) |
+| `POST` | [/api/Product/addproduct](https://localhost:7155/api/Product/addproduct) | Add a new product (Admin) |
+| `GET` | [/api/Product/getproductbyid/{id}](https://localhost:7155/api/Product/getproductbyid/{id}) | Get product details by ID |
+| `DELETE` | [/api/Product/deleteproduct/{id}](https://localhost:7155/api/Product/deleteproduct/{id}) | Delete product and its images |
+| `PUT` | [/api/Product/updateproduct](https://localhost:7155/api/Product/updateproduct) | Update existing product data |
+| `GET` | [/api/Product/home](https://localhost:7155/api/Product/home) | Home data (Latest, Featured, Offers) |
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### 🔐 2. Auth Controller
+*Base Path: `/api/Auth`*
 
-```bash
-ng generate component component-name
-```
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | [/api/Auth/register](https://localhost:7155/api/Auth/register) | Create a new user account |
+| `POST` | [/api/Auth/Login](https://localhost:7155/api/Auth/Login) | User login (returns JWT) |
+| `POST` | [/api/Auth/confirm-email](https://localhost:7155/api/Auth/confirm-email) | Verify user email |
+| `PATCH` | [/api/Auth/change-password](https://localhost:7155/api/Auth/change-password) | Update user password |
+| `POST` | [/api/Auth/refresh-token](https://localhost:7155/api/Auth/refresh-token) | Get new JWT via Refresh Token |
+| `POST` | [/api/Auth/forgot-password](https://localhost:7155/api/Auth/forgot-password) | Request password reset link |
+| `POST` | [/api/Auth/reset-password](https://localhost:7155/api/Auth/reset-password) | Set new password |
+| `GET` | [/api/Auth/get-current-user](https://localhost:7155/api/Auth/get-current-user) | Get logged-in user profile |
+| `GET` | [/api/Auth/signin-google](https://localhost:7155/api/Auth/signin-google) | External Auth: Google |
+| `GET` | [/api/Auth/signin-facebook](https://localhost:7155/api/Auth/signin-facebook) | External Auth: Facebook |
+| `POST` | [/api/Auth/logout](https://localhost:7155/api/Auth/logout) | Clear session and cookies |
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+### 🧺 3. Basket Controller (Redis)
+*Base Path: `/api/Basket`*
 
-## Building
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | [/api/Basket/CreateBasketId](https://localhost:7155/api/Basket/CreateBasketId) | Generate a unique Basket ID |
+| `POST` | [/api/Basket/AddToBasket](https://localhost:7155/api/Basket/AddToBasket) | Add/Update items in Redis basket |
+| `GET` | [/api/Basket/GetBasket](https://localhost:7155/api/Basket/GetBasket) | Retrieve basket items |
+| `DELETE` | [/api/Basket/RemoveItemFromBasket](https://localhost:7155/api/Basket/RemoveItemFromBasket) | Delete specific item |
+| `DELETE` | [/api/Basket/ClearBasket](https://localhost:7155/api/Basket/ClearBasket) | Delete entire basket |
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+### ❤️ 4. WishList Controller
+*Base Path: `/api/WishList`*
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | [/api/WishList/add-wishlist](https://localhost:7155/api/WishList/add-wishlist) | Add product to favorites |
+| `GET` | [/api/WishList/get-wishlists-for-current-user](https://localhost:7155/api/WishList/get-wishlists-for-current-user) | Get user's favorites |
+| `DELETE` | [/api/WishList/remove-from-wishlist](https://localhost:7155/api/WishList/remove-from-wishlist) | Remove from favorites |
+| `GET` | [/api/WishList/is-product-in-wishlist](https://localhost:7155/api/WishList/is-product-in-wishlist) | Check if item is favorited |
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### 📦 5. Order & Payment
+*Base Path: `/api/Order` & `/api/Payment`*
 
-```bash
-ng test
-```
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | [/api/Order/create-order](https://localhost:7155/api/Order/create-order) | Convert basket to an order |
+| `GET` | [/api/Order/get-order](https://localhost:7155/api/Order/get-order) | Get order details by ID |
+| `GET` | [/api/Order/get-orders-for-user](https://localhost:7155/api/Order/get-orders-for-user) | List all user orders |
+| `GET` | [/api/Order/{orderId}/invoice-pdf](https://localhost:7155/api/Order/1/invoice-pdf) | Download PDF Invoice |
+| `POST` | [/api/Payment/Create-payment-intent](https://localhost:7155/api/Payment/Create-payment-intent) | Initialize Stripe Payment |
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+### 🏷️ 6. Categories & Delivery
+| Method | Controller | Endpoint | Description |
+| :--- | :--- | :--- | :--- |
+| `GET` | Category | [/api/Category/get-all-categories](https://localhost:7155/api/Category/get-all-categories) | List all categories |
+| `POST` | Category | [/api/Category/add-category](https://localhost:7155/api/Category/add-category) | Add new category |
+| `GET` | Delivery | [/api/DeliveryMethod/get-all-delivery-methods](https://localhost:7155/api/DeliveryMethod/get-all-delivery-methods) | List shipping options |
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+_Generated with ❤️ for Ventro E-Commerce Project_
