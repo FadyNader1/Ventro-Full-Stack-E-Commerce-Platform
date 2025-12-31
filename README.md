@@ -3,7 +3,7 @@
 **Ventro** is a modern, full-stack e-commerce platform featuring a powerful **ASP.NET Core Web API** backend and a high-performance **Angular 17+ (Standalone Components)** frontend.
 
 - 🌐 **Live Demo**: [https://ventro-gold.vercel.app](https://ventro-gold.vercel.app/)
-- 🔗 **Backend API Swagger**: [https://ventro.runasp.net](https://ventro.runasp.net/swagger/index.html/)
+- 🔗 **Backend API Swagger**: [https://ventro.runasp.net/swagger/index.html](https://ventro.runasp.net/swagger/index.html)
 
 The project delivers a complete shopping experience with authentication, product management, wishlist, cart, payments, orders, and more.
 
